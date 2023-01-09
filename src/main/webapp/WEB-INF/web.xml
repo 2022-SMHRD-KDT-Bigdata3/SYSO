@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.LoginService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CalendarService</servlet-name>
+  	<display-name>CalendarService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.CalendarService</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
   	<url-pattern>/JoinService</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>LoginService</servlet-name>
   	<url-pattern>/LoginService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CalendarService</servlet-name>
+  	<url-pattern>/CalendarService</url-pattern>
   </servlet-mapping>
 </web-app>
