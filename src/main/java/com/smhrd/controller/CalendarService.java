@@ -20,11 +20,12 @@ public class CalendarService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String user_id = request.getParameter("user_id");
-		String title = request.getParameter("title");
 		String content = request.getParameter("content");
+		String start = request.getParameter("start");
+		String end = request.getParameter("end");
+		String color = request.getParameter("color");
 		
-		tb_calVO vo = new tb_calVO(user_id, title, content);
+		tb_calVO vo = new tb_calVO(content, start, end, color);
 	      
 	      tb_calDAO dao = new tb_calDAO(vo);
 	     // ArrayList<E> res = dao.insertEvent();
@@ -38,6 +39,9 @@ public class CalendarService extends HttpServlet {
 	    	  System.out.println("일정저장실패");
 	      }
 	   }
+
+
+	
 
 		
 	}

@@ -13,6 +13,13 @@ public class tb_calVO {
 	private boolean allday;
 	private String textColor;
 	private String backgroundColor;
+	public tb_calVO(String content, String start1, String end1, String backgroundColor) {
+		super();
+		this.content = content;
+		this.start1 = start1;
+		this.end1 = end1;
+		this.backgroundColor = backgroundColor;
+	}
 	private String borderColor;
 	
 	
