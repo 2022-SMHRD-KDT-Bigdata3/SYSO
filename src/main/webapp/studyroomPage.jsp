@@ -38,12 +38,12 @@
                               스터디 카페
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="studycafe.html#masthead">나의 스터디모임</a></li>
-                                <li><a class="dropdown-item" href="studycafe.html#searchRoom">스터디모임 찾기</a></li>
-                                <li><a class="dropdown-item" href="studycafe.html#makeRoom">스터디모임 만들기</a></li>
+                                <li><a class="dropdown-item" href="studyroomPage.jsp#masthead">나의 스터디모임</a></li>
+                                <li><a class="dropdown-item" href="studyroomPage.jsp#searchRoom">스터디모임 찾기</a></li>
+                                <li><a class="dropdown-item" href="studyroomPage.jsp#makeRoom">스터디모임 만들기</a></li>
                             </ul>
                           </li>
-                        <li class="nav-item"><a class="nav-link" href="#main.html#page-top">나의 일정</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mainPage.jsp#page-top">나의 일정</a></li>
                     </ul>
                 </div>
             </div>

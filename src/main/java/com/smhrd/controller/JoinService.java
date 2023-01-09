@@ -34,9 +34,9 @@ public class JoinService extends HttpServlet {
       int res = dao.join(user);
       
       if(res > 0) { //삽입성공
-         response.sendRedirect("login.html");
+         response.sendRedirect("mainPage.jsp");
       }else {//삽입실패
-         response.sendRedirect("join.html");
+         response.sendRedirect("startPage.jsp");
       }
    }
 

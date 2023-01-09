@@ -145,66 +145,61 @@
                                         <div class="input-group mb-3">
                                             <div class="container text-center">
                                                 <div class="row row-cols-1">
+                                                  <form action="JoinService" method="post">
                                                   <div class="col">
-                                                    <input type="text" class="form-control" placeholder="아이디" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input name = "user_id" type="text" class="form-control" placeholder="아이디" aria-label="Username" aria-describedby="basic-addon1">
                                                   </div>
                                                   <div class="col">
-                                                    <input type="text" class="form-control" placeholder="비밀번호" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input name="user_pw" type="password" class="form-control" placeholder="비밀번호" aria-label="Username" aria-describedby="basic-addon1">
                                                   </div>
                                                   <div class="col">
-                                                    <input type="text" class="form-control" placeholder="이름" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input name="user_name" type="text" class="form-control" placeholder="이름" aria-label="Username" aria-describedby="basic-addon1">
                                                   </div>
                                                   <div class="col">
-                                                    <input type="text" class="form-control" placeholder="닉네임" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input name="user_nick" type="text" class="form-control" placeholder="닉네임" aria-label="Username" aria-describedby="basic-addon1">
                                                   </div>
                                                   <div class="col">
-                                                    <input type="text" class="form-control" placeholder="이메일주소" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input name="user_email" type="text" class="form-control" placeholder="이메일주소" aria-label="Username" aria-describedby="basic-addon1">
                                                   </div>
                                                   <div class="col">
-                                                    <select class="form-select" aria-label="Default select example">
+                                                    <select  name="user_aog" class="form-select" aria-label="Default select example">
                                                         <option selected>연령대</option>
-                                                        <option value="1">10대</option>
-                                                        <option value="2">20대</option>
-                                                        <option value="3">30대</option>
-                                                        <option value="3">40대</option>
-                                                        <option value="3">50대</option>
-                                                        <option value="3">60대</option>
+                                                        <option value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="30">30</option>
+                                                        <option value="40">40</option>
+                                                        <option value="50">50</option>
+                                                        <option value="60">60</option>
                                                       </select>
                                                   </div>
                                                   <div class="col">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                                        <label class="form-check-label" for="exampleRadios1">
-                                                          남자
-                                                        </label>
+                                                     <div class="form-check">
+                                                        <input name="gender" class="form-check-input" type="radio"  id="exampleRadios1" value="m" >
+                                                        <label class="form-check-label" for="exampleRadios1">남자</label>
                                                       </div>
                                                       <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                                        <label class="form-check-label" for="exampleRadios2">
-                                                          여자
-                                                        </label>
+                                                        <input name="gender" class="form-check-input" type="radio"  id="exampleRadios2" value="f">
+                                                        <label class="form-check-label" for="exampleRadios2">여자</label>
                                                       </div>
+                                                  </div>  
+                                                  <div class="col">
+                                                    <input name="yob" type="text" class="form-control" placeholder="출생연도" aria-label="Username" aria-describedby="basic-addon1">
                                                   </div>
                                                   <div class="col">
-                                                    <input type="date" class="form-control" placeholder="출생연도" aria-label="Username" aria-describedby="basic-addon1">
-                                                  </div>
-                                                  <div class="col">
-                                                    <input type="text" class="form-control" placeholder="휴대전화번호" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input name="phone" type="text" class="form-control" placeholder="휴대전화번호" aria-label="Username" aria-describedby="basic-addon1">
                                                   </div>
                                                 </div>
                                               </div>
                                         </div>
-                                        <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">회원가입</button></div>
+                                        <div class="d-grid">
+                                        <input type="submit" value="JOIN">
+                                        </div>
+                                        </form>
                                     </div>
                                   </div>
                                 </div>
 
                               </div>
-                            <!--네이버 로그인-->
-                            
-                            <ul></ul>
-                            <!--구글 로그인-->
-                            
                         </form>
                         </div>
                     
