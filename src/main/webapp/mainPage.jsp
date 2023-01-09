@@ -80,7 +80,7 @@
                               <!--캘린더 생성-->
                                   <div id='calendar'></div>
                                   <ul></ul>
-                              <a href="#" class="btn btn-primary">일정추가</a>
+                              <a href="calendar.html" class="btn btn-primary">일정추가</a>
                             </div>
                         </div>
                     </div>
