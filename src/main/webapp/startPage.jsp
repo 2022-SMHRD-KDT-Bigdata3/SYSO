@@ -252,9 +252,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="d-grid">
-									<input type="submit" value="JOIN">
-								</div>
+								<div class="d-grid"><button class="btn btn-primary" type="submit">로그인</button></div>
 						</form>
 					</div>
 				</div>
