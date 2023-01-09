@@ -6,19 +6,6 @@
 		INSERT INTO tb_calendar values(calendar_seq.nextval,#{user_id},#{groupId},#{title},#{writer},#{content},#{start1},#{end1},#{allday},#{textColor},#{backgroundColor},#{borderColor})
 	</insert>	
 	
-	<resultMap type="calen" id="calMap">
-		<result property="start" column="start1"/>
-		<result property="end" column="end1"/>
-	</resultMap>
-	<select id="calenList" resultMap="calMap">
-		SELECT id, title,
-		TO_char(start1, 'YYYY-MM-DD"T"HH24:MI:SS') start1,
-		TO_char(end1, 'YYYY-MM-DD"T"HH24:MI:SS') end1,
-		ALLDAY,
-		TEXTCOLOR,
-		BACKGROUNDCOLOR,
-		BORDERCOLOR 
-		FROM CALENDAR
-	</select>
+
 
 </mapper>
