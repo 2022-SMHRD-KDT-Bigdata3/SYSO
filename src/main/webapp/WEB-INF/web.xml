@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.CalendarService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EventCall</servlet-name>
+  	<display-name>EventCall</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.EventCall</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
   	<url-pattern>/JoinService</url-pattern>
@@ -33,5 +39,9 @@
   <servlet-mapping>
   	<servlet-name>CalendarService</servlet-name>
   	<url-pattern>/CalendarService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EventCall</servlet-name>
+  	<url-pattern>/EventCall</url-pattern>
   </servlet-mapping>
 </web-app>

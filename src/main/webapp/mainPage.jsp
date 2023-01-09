@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.tb_calDAO"%>
+<%@page import="com.smhrd.model.tb_user"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -94,11 +96,9 @@
         });
     </script>
 
-
-
-
     </head>
     <body id="page-top">
+    <%tb_user info = (tb_user)session.getAttribute("info"); %>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -174,6 +174,13 @@
             </div>
         </div>
     </div>
+    <%if(info==null){%>
+    	console.log("로그인 후 진행");
+    <%}else{
+    	tb_calDAO dao = new tb_calDAO();
+    }%>
+    
+    
 
                               
                             </div>
