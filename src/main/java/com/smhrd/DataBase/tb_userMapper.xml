@@ -7,4 +7,9 @@
    <!-- #{필드명과 같게} -->
       insert into tb_user values (#{user_id},#{user_pw},#{user_name},#{user_nick},#{user_email},#{user_aog},#{gender},#{yob},#{phone},sysdate)
    </insert>
+   
+   	<select id="login" parameterType="com.smhrd.model.tb_user" resultType="com.smhrd.model.tb_user">
+		select * from tb_user where user_id = #{user_id} and user_pw=#{user_pw}
+	</select>
+   
 </mapper>

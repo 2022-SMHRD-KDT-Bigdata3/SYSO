@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.tb_user"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,6 +31,12 @@
 <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
+	<%
+	//세션으로부터 가지고올꺼니까 getAttribute
+	// info 는 msgmembervo타입이고 getAttribute는 object로 반환되니까 다운캐스팅 필요
+	// 로그인 하고 페이지를 넘어오자마자 인포라고 넣고 아래 흐름에서 모든 데이터를 사용할 수 있도록 위로 올림 
+	tb_user info = (tb_user) session.getAttribute("info");
+	%>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
 		id="mainNav">
@@ -144,7 +151,7 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center mb-5">
 
 				<div class="col-lg-6">
-					<form id="contactForm" data-sb-form-api-token="API_TOKEN">
+					<form action ="LoginService" id="contactForm" data-sb-form-api-token="API_TOKEN">
 						<!-- Submit Button-->
 						<div class="accordion" id="accordionExample">
 							<div class="accordion-item">
@@ -158,15 +165,12 @@
 									aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 									<div class="accordion-body">
 										<div class="input-group mb-3">
-											<input type="text" class="form-control" placeholder="아이디"
+											<input type="text" name="user_id" class="form-control" placeholder="아이디"
 												aria-label="Username" aria-describedby="basic-addon1">
-											<input type="text" class="form-control" placeholder="비밀번호"
+											<input type="password" name="user_pw" class="form-control" placeholder="비밀번호"
 												aria-label="Username" aria-describedby="basic-addon1">
 										</div>
-										<div class="d-grid">
-											<button class="btn btn-primary btn-xl disabled"
-												id="submitButton" type="submit">로그인</button>
-										</div>
+									<div class="d-grid"><button class="btn btn-primary" type="submit">로그인</button></div>
 									</div>
 								</div>
 							</div>

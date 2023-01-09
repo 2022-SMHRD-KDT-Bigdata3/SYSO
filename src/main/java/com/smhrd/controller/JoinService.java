@@ -35,6 +35,7 @@ public class JoinService extends HttpServlet {
       
       if(res > 0) { //삽입성공
          response.sendRedirect("mainPage.jsp");
+         System.out.println("login");
       }else {//삽입실패
          response.sendRedirect("startPage.jsp");
       }
