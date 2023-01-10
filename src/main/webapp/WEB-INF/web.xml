@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.caladd</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>makestudy</servlet-name>
+  	<display-name>makestudy</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.makestudy</servlet-class>
+  </servlet>
 
   
   
@@ -36,6 +42,10 @@
   <servlet-mapping>
   	<servlet-name>caladd</servlet-name>
   	<url-pattern>/caladd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>makestudy</servlet-name>
+  	<url-pattern>/makestudy</url-pattern>
   </servlet-mapping>
 
 </web-app>
