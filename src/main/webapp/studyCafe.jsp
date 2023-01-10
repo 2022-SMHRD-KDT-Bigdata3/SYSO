@@ -38,9 +38,9 @@
                               스터디 카페
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="studyroomPage.jsp#masthead">나의 스터디모임</a></li>
-                                <li><a class="dropdown-item" href="studyroomPage.jsp#searchRoom">스터디모임 찾기</a></li>
-                                <li><a class="dropdown-item" href="studyroomPage.jsp#makeRoom">스터디모임 만들기</a></li>
+                                <li><a class="dropdown-item" href="studyCafe.jsp#page-top">나의 스터디모임</a></li>
+                                <li><a class="dropdown-item" href="studyCafe.jsp#searchRoom">스터디모임 찾기</a></li>
+                                <li><a class="dropdown-item" href="studyCafe.jsp#makeRoom">스터디모임 만들기</a></li>
                             </ul>
                           </li>
                         <li class="nav-item"><a class="nav-link" href="mainPage.jsp#page-top">나의 일정</a></li>
@@ -262,17 +262,13 @@
             </div>
         </div>
         <!-- 스터디모임생성-->
-        <section class="page-section bg-dark text-white" id="makeRoom">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">원하는 스터디모임을 만드세요</h2>
-                <div class="card">
-                    <div class="card-body">
-                    
-                    </div>
-                </div>
-                
-            </div>
-        </section>
+	<section class="page-section bg-dark text-white" id="makeRoom">
+		<div class="container px-4 px-lg-5 text-center">
+			<h2 class="mb-4">원하는 스터디모임을 만드세요</h2>
+			<a class="btn btn-light btn-xl" href="makeStudy.jsp">스터디모임
+				만들기</a>
+		</div>
+	</section>
 
         <!-- Footer-->
         <footer class="bg-light py-5">
