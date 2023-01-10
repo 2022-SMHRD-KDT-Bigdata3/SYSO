@@ -6,6 +6,6 @@
 		INSERT INTO tb_calendar values(calendar_seq.nextval,#{user_id},#{groupId},#{title},#{writer},#{content},#{start1},#{end1},#{allday},#{textColor},#{backgroundColor},#{borderColor})
 	</insert>	
 	
-	
+
 
 </mapper>

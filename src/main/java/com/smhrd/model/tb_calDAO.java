@@ -18,6 +18,10 @@ public class tb_calDAO {
 		// TODO Auto-generated constructor stub
 	}
 
+	public tb_calDAO() {
+		super();
+	}
+
 	public int insertEvent(tb_calVO vo) {
 		session = sqlSessionFactory.openSession(true);
 		int res = 0;

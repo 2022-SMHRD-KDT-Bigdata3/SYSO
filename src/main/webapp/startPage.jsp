@@ -151,8 +151,8 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center mb-5">
 
 				<div class="col-lg-6">
-					<form action ="LoginService" id="contactForm" data-sb-form-api-token="API_TOKEN">
-						<!-- Submit Button-->
+					<!-- 로그인 -->
+					<form action="LoginService" id="contactForm">
 						<div class="accordion" id="accordionExample">
 							<div class="accordion-item">
 								<h2 class="accordion-header" id="headingOne">
@@ -165,17 +165,21 @@
 									aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 									<div class="accordion-body">
 										<div class="input-group mb-3">
-											<input type="text" name="user_id" class="form-control" placeholder="아이디"
-												aria-label="Username" aria-describedby="basic-addon1">
-											<input type="password" name="user_pw" class="form-control" placeholder="비밀번호"
-												aria-label="Username" aria-describedby="basic-addon1">
+											<input type="text" name="user_id" class="form-control"
+												placeholder="아이디" aria-label="Username"
+												aria-describedby="basic-addon1"> 
+												<input type="password" name="user_pw" class="form-control"
+												placeholder="비밀번호" aria-label="Username"
+												aria-describedby="basic-addon1">
 										</div>
-									<div class="d-grid"><button class="btn btn-primary" type="submit">로그인</button></div>
+										<div class="d-grid">
+											<button class="btn btn-primary" type="submit">로그인</button>
+										</div>
 									</div>
 								</div>
 							</div>
 					</form>
-
+					<!-- 로그인 끝-->
 					<div class="accordion-item">
 						<h2 class="accordion-header" id="headingTwo">
 							<button class="accordion-button collapsed" type="button"
@@ -189,6 +193,7 @@
 								<div class="input-group mb-3">
 									<div class="container text-center">
 										<div class="row row-cols-1">
+										<!-- 회원가입 -->
 											<form action="JoinService" method="post">
 												<div class="col">
 													<input name="user_id" type="text" class="form-control"
@@ -219,12 +224,12 @@
 													<select name="user_aog" class="form-select"
 														aria-label="Default select example">
 														<option selected>연령대</option>
-														<option value="10">10</option>
-														<option value="20">20</option>
-														<option value="30">30</option>
-														<option value="40">40</option>
-														<option value="50">50</option>
-														<option value="60">60</option>
+														<option value="10">10대</option>
+														<option value="20">20대</option>
+														<option value="30">30대</option>
+														<option value="40">40대</option>
+														<option value="50">50대</option>
+														<option value="60">60대</option>
 													</select>
 												</div>
 												<div class="col">
@@ -252,14 +257,16 @@
 										</div>
 									</div>
 								</div>
-								<div class="d-grid"><button class="btn btn-primary" type="submit">로그인</button></div>
-						</form>
+								<div class="d-grid">
+									<button class="btn btn-primary" type="submit">회원가입</button>
+								</div>
+								</form>
+								<!-- 회원가입 끝-->
+							</div>
+						</div>
 					</div>
+
 				</div>
-			</div>
-
-		</div>
-
 	</section>
 	<!-- Footer-->
 	<footer class="bg-light py-5">

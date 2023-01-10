@@ -45,26 +45,17 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 timeZone: 'UTC',
                 initialView: 'dayGridMonth', // 홈페이지에서 다른 형태의 view를 확인할  수 있다.
-                events:[ // 일정 데이터 추가 , DB의 event를 가져오려면 JSON 형식으로 변환해 events에 넣어주면된다.
-                    {
-                        title:'일정',
-                        start:'2021-05-26 00:00:00',
-                        end:'2021-05-27 24:00:00' 
-                        // color 값을 추가해 색상도 변경 가능 자세한 내용은 하단의 사이트 참조
-                    }
-                ], footerToolbar: {
-                    center: 'addEventButton' // headerToolbar에 버튼을 추가
+                footerToolbar: {
+                    right: 'addEventButton'
                 }, customButtons: {
                     addEventButton: { // 추가한 버튼 설정
-                        text : "일정 추가",  // 버튼 내용
+                        text : "일정 추가", 
                         click : function(){ // 버튼 클릭 시 이벤트 추가
                             $("#calendarModal").modal("show"); // modal 나타내기
-
                             $("#addCalendar").on("click",function(){  // modal의 추가 버튼 클릭 시
                                 var content = $("#calendar_content").val();
                                 var start_date = $("#calendar_start_date").val();
                                 var end_date = $("#calendar_end_date").val();
-                                var backgroundcolor = $("#calendar_backgroundColor").val();
                                 var bordercolor = $("#calendar_borderColor").val();
                                 
                                 //내용 입력 여부 확인
@@ -79,10 +70,8 @@
                                         "title" : content,
                                         "start" : start_date,
                                         "end" : end_date,
-                                        "bgcolor" : backgroundcolor,
                                         "bordercolor" : bordercolor
                                     }//전송할 객체 생성
-
                                     console.log(obj); //서버로 해당 객체를 전달해서 DB 연동 가능
                                 }
                             });
@@ -95,7 +84,30 @@
             calendar.render();
         });
     </script>
+    <script type="text/javascript">
+    $.ajax({
+        url : "eventCall", // 통신하고 싶은 서버의 url
+        method : "POST", // 데이터 전송 방식
+        data : {"" : }, // 데이터를 보내는 곳
+        dataType : "JSON", // 결과 데이터를 받는 형식
+        success : function(data) {
+           // 비동기 통신에 성공했을 때
+           console.log("통신성공");
 
+           if(data.eventCall == "OK"){
+        	   $("#idCheckResult").text("사용가능한 아이디입니다");
+        	   $("#idCheckResult").css("color","white");
+           }else{
+        	   $("#idCheckResult").text("사용불가능한 아이디입니다");
+           }
+        },
+        error : function() {
+           // 비동기 통신에 실패했을 때
+           console.log("통신실패")
+        }
+     });
+  });
+    </script>
     </head>
     <body id="page-top">
     <%tb_user info = (tb_user)session.getAttribute("info"); %>
