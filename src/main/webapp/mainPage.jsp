@@ -1,4 +1,6 @@
 
+<%@page import="java.io.PrintWriter"%>
+<%@page import="com.google.gson.Gson"%>
 <%@page import="com.smhrd.model.tb_user"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -40,6 +42,7 @@
     
     
         <script type="text/javascript">
+        var obj;
             document.addEventListener('DOMContentLoaded', function () {
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -52,8 +55,8 @@
                             end:'2021-05-27 24:00:00' 
                             // color 값을 추가해 색상도 변경 가능 자세한 내용은 하단의 사이트 참조
                         }
-                    ], headerToolbar: {
-                        center: 'addEventButton' // headerToolbar에 버튼을 추가
+                    ], footerToolbar: {
+                        right: 'addEventButton' // headerToolbar에 버튼을 추가
                     }, customButtons: {
                         addEventButton: { // 추가한 버튼 설정
                             text : "일정 추가",  // 버튼 내용
@@ -61,6 +64,7 @@
                                 $("#calendarModal").modal("show"); // modal 나타내기
     
                                 $("#addCalendar").on("click",function(){  // modal의 추가 버튼 클릭 시
+                                    var user_id = $("#hiddenid").val();
                                     var content = $("#calendar_content").val();
                                     var start_date = $("#calendar_start_date").val();
                                     var end_date = $("#calendar_end_date").val();
@@ -74,6 +78,7 @@
                                         alert("종료일이 시작일보다 먼저입니다.");
                                     }else{ // 정상적인 입력 시
                                         var obj = {
+                                    		"user_id" : user_id,
                                             "title" : content,
                                             "start" : start_date,
                                             "end" : end_date
@@ -90,7 +95,17 @@
                 });
                 calendar.render();
             });
-        </script>
+            
+<%
+Gson gson = new Gson();
+String content = (String)session.getAttribute("content");
+System.out.println(content);
+
+String result = gson.toJson(content);
+System.out.println(result);
+%>
+</script>
+
 </head>
 <body id="page-top">
 	<!-- 세션에 사용자정보 가져오기 -->
@@ -153,6 +168,7 @@
 					<!--캘린더가 들어가는 자리-->
 					<div class="card">
 						<div class="card-body">
+						
 							<div id="calendarBox">
         <div id="calendar"></div>
     </div>
@@ -169,6 +185,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
+                    	<input type="hidden" name="user_id"  id ="hiddenid" value="<%=info.getUser_id()%>"/>
                         <label for="taskId" class="col-form-label">일정 내용</label>
                         <input type="text" class="form-control" id="calendar_content" name="calendar_content">
                         <label for="taskId" class="col-form-label">시작 날짜</label>
