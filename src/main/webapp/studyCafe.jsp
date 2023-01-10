@@ -19,10 +19,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        
-                
-        
-    </script>
+
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -65,56 +62,133 @@
 
                           <div class="row">
                             <ul></ul>
-                            <div class="col-sm-4 mb-3 mb-sm-0">
-                              <div class="card">
-                                <div class="card-body">
-                                  <h5 class="card-title">스터디 모임 이름</h5>
-                                  <div class="container text-center">
-                                    <div class="row">
-                                        <div class="col-auto me-auto">시험과목</div>
-                                        <div class="col-auto me-auto">시험과목</div>
+                            <ul></ul>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                <div class="col">
+                                  <div class="card">
+                                    <div class="card-body">
+                                      <h5 class="card-title">스터디모임 이름</h5>
+                                      <div class="container text-start">
+                                        <div class="row">
+                                          <div class="col-4"><p class="card-text" >시험과목</p></div>
+                                          <div class="col-8">정보처리기사</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4"><p class="card-text">가입날짜</p></div>
+                                            <div class="col-8">2023-01-01</div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-4"><p class="card-text">진행률</p></div>
+                                            <div class="col-8">
+                                                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar" style="width: 25%"></div>
+                                                  </div>
+                                            </div>
+                                          </div>
+                                      </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-auto me-auto">가입날짜</div>
-                                        <div class="col-auto me-auto">가입날짜</div>
+                                    <div class="card-footer">
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <button id="enterSR" class="btn btn-primary me-md-2" type="button" onclick="location.href='enterStudyRoom.jsp'">입장</button>
+                                            <button class="btn btn-primary " type="button">탈퇴</button>
+                                          </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-auto me-auto">진행률</div>
-                                        <div class="col-auto me-auto">progress bar</div>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">스터디모임 이름</h5>
+                                        <div class="container text-start">
+                                          <div class="row">
+                                            <div class="col-4"><p class="card-text" >시험과목</p></div>
+                                            <div class="col-8">정보처리기사</div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-4"><p class="card-text">가입날짜</p></div>
+                                              <div class="col-8">2023-01-01</div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-4"><p class="card-text">진행률</p></div>
+                                              <div class="col-8">
+                                                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                      <div class="progress-bar" style="width: 25%"></div>
+                                                    </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="card-footer">
+                                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                              <button class="btn btn-primary me-md-2" type="button">탈퇴</button>
+                                              <button class="btn btn-primary " type="button">삭제</button>
+                                            </div>
                                       </div>
                                   </div>
-                                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-primary me-md-2" type="button">삭제</button>
-                                    <button class="btn btn-primary" type="button">나가기</button>
+                                </div>
+                                <div class="col">
+                                  <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">스터디모임 이름</h5>
+                                        <div class="container text-start">
+                                          <div class="row">
+                                            <div class="col-4"><p class="card-text" >시험과목</p></div>
+                                            <div class="col-8">정보처리기사</div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-4"><p class="card-text">가입날짜</p></div>
+                                              <div class="col-8">2023-01-01</div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-4"><p class="card-text">진행률</p></div>
+                                              <div class="col-8">
+                                                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                      <div class="progress-bar" style="width: 25%"></div>
+                                                    </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="card-footer">
+                                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                              <button class="btn btn-primary me-md-2" type="button">탈퇴</button>
+                                              <button class="btn btn-primary " type="button">삭제</button>
+                                            </div>
+                                      </div>   
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">스터디모임 이름</h5>
+                                        <div class="container text-start">
+                                          <div class="row">
+                                            <div class="col-4"><p class="card-text" >시험과목</p></div>
+                                            <div class="col-8">정보처리기사</div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-4"><p class="card-text">가입날짜</p></div>
+                                              <div class="col-8">2023-01-01</div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-4"><p class="card-text">진행률</p></div>
+                                              <div class="col-8">
+                                                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                      <div class="progress-bar" style="width: 25%"></div>
+                                                    </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="card-footer">
+                                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                              <button class="btn btn-primary me-md-2" type="button">탈퇴</button>
+                                              <button class="btn btn-primary " type="button">삭제</button>
+                                            </div>
+                                      </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="col-sm-4">
-                              <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">스터디 모임 이름</h5>
-                                    <p class="card-text">상세내용을 적는다면 여기에?</p>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                      <button class="btn btn-primary me-md-2" type="button">삭제</button>
-                                      <button class="btn btn-primary" type="button">나가기</button>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card">
-                                  <div class="card-body">
-                                    <h5 class="card-title">스터디 모임 이름</h5>
-                                  <p class="card-text">상세내용을 적는다면 여기에?</p>
-                                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-primary me-md-2" type="button">삭제</button>
-                                    <button class="btn btn-primary" type="button">나가기</button>
-                                  </div>
-                                  </div>
-                                </div>
-                              </div>
-
                         </div>
                       </div>
                     </div>
@@ -137,51 +211,64 @@
                     
                     <div class="col">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="m">
                             <label class="form-check-label" for="inlineCheckbox1">남자</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="f">
                             <label class="form-check-label" for="inlineCheckbox2">여자</label>
                           </div>
                     </div>
                     
                     <div class="col">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="10">
                             <label class="form-check-label" for="inlineCheckbox1">10대</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="20">
                             <label class="form-check-label" for="inlineCheckbox2">20대</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="30">
                             <label class="form-check-label" for="inlineCheckbox1">30대</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="40">
                             <label class="form-check-label" for="inlineCheckbox2">40대</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="50">
                             <label class="form-check-label" for="inlineCheckbox1">50대</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                            <label class="form-check-label" for="inlineCheckbox2">60대</label>
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="60">
+                            <label class="form-check-label" for="inlineCheckbox2">60대이상</label>
                         </div>
                     </div>
                     <div class="col">
                         <select class="form-select" aria-label="Default select example">
                             <option selected>응시지역</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Seoul">서울</option>
+                            <option value="Incheon">인천</option>
+                            <option value="Gyeonggi">경기</option>
+                            <option value="Gangwon">강원</option>
+                            <option value="Chungnam">충남</option>
+                            <option value="Chungbuk">충북</option>
+                            <option value="Daejeon">대전</option>
+                            <option value="Jeonbuk">전북</option>
+                            <option value="Jeonnam">전남</option>
+                            <option value="Gwangju">광주</option>
+                            <option value="Gyeongnam">경남</option>
+                            <option value="Kyeongbuk">경북</option>
+                            <option value="Busan">부산</option>
+                            <option value="Daegu">대구</option>
+                            <option value="Ulsan">울산</option>
+                            <option value="Jeju">제주</option>
                           </select>    
                     </div>
                     <div class="col"> 
-                        <button type="button" class="btn btn-primary btn-sm">찾기</button>
+                        <button type="button" value="searchStudy" class="btn btn-primary btn-sm">찾기</button>
                     </div>
                     </div>
                   </div>
