@@ -137,6 +137,7 @@
 											</button>
 										</div>
 										<form action="CalendarService">
+										<input type="hidden" name="user_id" value="<%=info.getUser_id()%>"/>
 											<div class="modal-body">
 												<div class="form-group">
 													<label for="taskId" class="col-form-label">일정 내용</label> <input
@@ -334,7 +335,7 @@
     $.ajax({
         url : "eventCall", // 통신하고 싶은 서버의 url
         method : "POST", // 데이터 전송 방식
-        data : {"obj" : obj}, // 데이터를 보내는 곳
+        data : obj , // 데이터를 보내는 곳
         dataType : "JSON", // 결과 데이터를 받는 형식
         success : function(data) {
            // 비동기 통신에 성공했을 때

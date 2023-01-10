@@ -20,6 +20,8 @@ public class CalendarService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String user_id = request.getParameter("user_id");
+		System.out.println(user_id);
 		String content = request.getParameter("content");
 		String start = request.getParameter("start");
 		String end = request.getParameter("end");
