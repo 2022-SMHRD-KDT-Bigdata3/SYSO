@@ -13,6 +13,21 @@ public class tb_calVO {
 	private boolean allday;
 	private String textColor;
 	private String backgroundColor;
+	private String borderColor;
+	
+	
+		
+	public tb_calVO(String user_id, String content, String start1, String end1, String borderColor) {
+		super();
+		this.user_id = user_id;
+		this.content = content;
+		this.start1 = start1;
+		this.end1 = end1;
+		this.borderColor = borderColor;
+	}
+
+
+
 	public tb_calVO(String content, String start1, String end1, String backgroundColor) {
 		super();
 		this.content = content;
@@ -20,8 +35,6 @@ public class tb_calVO {
 		this.end1 = end1;
 		this.backgroundColor = backgroundColor;
 	}
-	private String borderColor;
-	
 	
 	
 		
