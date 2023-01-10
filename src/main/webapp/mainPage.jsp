@@ -62,7 +62,6 @@
                             text : "일정 추가",  // 버튼 내용
                             click : function(){ // 버튼 클릭 시 이벤트 추가
                                 $("#calendarModal").modal("show"); // modal 나타내기
-    
                                 $("#addCalendar").on("click",function(){  // modal의 추가 버튼 클릭 시
                                     var user_id = $("#hiddenid").val();
                                     var content = $("#calendar_content").val();

@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.tb_user"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,6 +23,10 @@
 
     </head>
     <body id="page-top">
+    <!-- 세션에 사용자정보 가져오기 -->
+	<%
+	tb_user info = (tb_user)session.getAttribute("info");
+	%>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -41,6 +46,12 @@
                             </ul>
                           </li>
                         <li class="nav-item"><a class="nav-link" href="mainPage.jsp#page-top">나의 일정</a></li>
+                        <!-- 세션의 아이디값 확인 -->
+					<%if (info!=null){ %>
+					<li class="nav-item"><a class="nav-link"
+						href="mainPage.jsp#page-top"><%=info.getUser_id()%>님 환영합니다</a></li>
+					<%}else{ %>
+					<h3>현재 아이디값 못찾음</h3><%} %>
                     </ul>
                 </div>
             </div>
