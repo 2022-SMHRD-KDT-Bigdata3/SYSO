@@ -426,6 +426,7 @@ System.out.println(result);
       </div>
    </div>
    <!-- 스터디모임생성-->
+   <!-- 스터디 -->
    <section class="page-section bg-dark text-white">
       <div class="container px-4 px-lg-5 text-center">
          <h2 class="mb-4">원하는 스터디모임을 만드세요</h2>
