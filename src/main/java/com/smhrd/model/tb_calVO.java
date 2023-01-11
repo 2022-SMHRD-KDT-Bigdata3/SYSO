@@ -14,8 +14,7 @@ public class tb_calVO {
 	private String backgroundColor;
 	private String borderColor;
 	
-	
-	
+
 	public tb_calVO(String user_id, String content, String start1, String end1) {
 		super();
 		this.user_id = user_id;
