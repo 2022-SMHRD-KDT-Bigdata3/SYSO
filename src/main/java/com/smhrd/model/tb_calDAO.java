@@ -1,6 +1,8 @@
 package com.smhrd.model;
 
+
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -17,10 +19,8 @@ public class tb_calDAO {
 		
 		session = sqlSessionFactory.openSession(true);
 		int res =0; 
-		
-		
 		try {
-			
+	
 			res = session.insert("caladd", vo);
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -37,7 +37,18 @@ public class tb_calDAO {
 		return (ArrayList<tb_calVO>)list;
 	}
 	
-	
+public List<tb_calVO> calget() {		
+		session = sqlSessionFactory.openSession(true);
+		List<tb_calVO> list =null;; 
+		try {	
+			list = session.selectList("calget");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return list;
+	}
 	
 	
 }
