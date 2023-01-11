@@ -207,7 +207,7 @@
             </div>
         </header>
         
-        <!-- 스터디모임 찾기-->
+               <!-- 스터디모임 찾기-->
         <section class="page-section" id="searchRoom">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">스터디 모임 찾기</h2>
@@ -215,73 +215,102 @@
             </div>
             <div class="container px-4 px-lg-5">
                 <div class="container text-center">
-                    <div class="row row-cols-8">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="시험과목"><!--aria-label="Username" aria-describedby="addon-wrapping">-->
-                        </div>
-                    
-                    <div class="col">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="m">
-                            <label class="form-check-label" for="inlineCheckbox1">남자</label>
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 50rem;">
+                            <form action="searchroom">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">
+                                    <input name ="sr_name"  type="text" class="form-control" placeholder="시험과목"><!--aria-label="Username" aria-describedby="addon-wrapping">-->
+                              </li>
+                            </ul>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                          모임성별
+                                        </div>
+                                        <div class="col-10">
+                                            <div class="form-check form-check-inline ">
+                                                <input name="sr_gender"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="a">
+                                                <label class="form-check-label" for="inlineCheckbox2">전체</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input name="sr_gender"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="m">
+                                                <label class="form-check-label" for="inlineCheckbox1">남자</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input name="sr_gender" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="f">
+                                                <label class="form-check-label" for="inlineCheckbox2">여자</label>
+                                            </div>
+                                        </div>
+                                </li>
+                              </ul>
+                              <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col">
+                                          연령대
+                                        </div>
+                                        <div class="col-10">
+                                    <div class="form-check form-check-inline">
+                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="10">
+                                        <label class="form-check-label" for="inlineCheckbox1">10대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="20">
+                                        <label class="form-check-label" for="inlineCheckbox2">20대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="30">
+                                        <label class="form-check-label" for="inlineCheckbox1">30대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="40">
+                                        <label class="form-check-label" for="inlineCheckbox2">40대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="50">
+                                        <label class="form-check-label" for="inlineCheckbox1">50대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="60">
+                                        <label class="form-check-label" for="inlineCheckbox2">60대이상</label>
+                                    </div>
+                                </div>
+                                </li>
+                              </ul>
+                              <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <select name="location"class="form-select" aria-label="Default select example">
+                                        <option selected>응시지역</option>
+                                        <option value="Seoul">서울</option>
+                                        <option value="Incheon">인천</option>
+                                        <option value="Gyeonggi">경기</option>
+                                        <option value="Gangwon">강원</option>
+                                        <option value="Chungnam">충남</option>
+                                        <option value="Chungbuk">충북</option>
+                                        <option value="Daejeon">대전</option>
+                                        <option value="Jeonbuk">전북</option>
+                                        <option value="Jeonnam">전남</option>
+                                        <option value="Gwangju">광주</option>
+                                        <option value="Gyeongnam">경남</option>
+                                        <option value="Kyeongbuk">경북</option>
+                                        <option value="Busan">부산</option>
+                                        <option value="Daegu">대구</option>
+                                        <option value="Ulsan">울산</option>
+                                        <option value="Jeju">제주</option>
+                                      </select>    
+                                </li>
+                              </ul>
+                            <div class="card-footer">
+                                <div class="d-grid gap-2">
+                                    <button type="submit" value="searchStudy"class="btn btn-primary" >찾기</button>
+            
+                                </div>
+                            </div>
+                        </form>
                           </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="f">
-                            <label class="form-check-label" for="inlineCheckbox2">여자</label>
-                          </div>
-                    </div>
-                    
-                    <div class="col">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="10">
-                            <label class="form-check-label" for="inlineCheckbox1">10대</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="20">
-                            <label class="form-check-label" for="inlineCheckbox2">20대</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="30">
-                            <label class="form-check-label" for="inlineCheckbox1">30대</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="40">
-                            <label class="form-check-label" for="inlineCheckbox2">40대</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="50">
-                            <label class="form-check-label" for="inlineCheckbox1">50대</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="60">
-                            <label class="form-check-label" for="inlineCheckbox2">60대이상</label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>응시지역</option>
-                            <option value="Seoul">서울</option>
-                            <option value="Incheon">인천</option>
-                            <option value="Gyeonggi">경기</option>
-                            <option value="Gangwon">강원</option>
-                            <option value="Chungnam">충남</option>
-                            <option value="Chungbuk">충북</option>
-                            <option value="Daejeon">대전</option>
-                            <option value="Jeonbuk">전북</option>
-                            <option value="Jeonnam">전남</option>
-                            <option value="Gwangju">광주</option>
-                            <option value="Gyeongnam">경남</option>
-                            <option value="Kyeongbuk">경북</option>
-                            <option value="Busan">부산</option>
-                            <option value="Daegu">대구</option>
-                            <option value="Ulsan">울산</option>
-                            <option value="Jeju">제주</option>
-                          </select>    
-                    </div>
-                    <div class="col"> 
-                        <button type="button" value="searchStudy" class="btn btn-primary btn-sm">찾기</button>
-                    </div>
-                    </div>
+                         </div>
                   </div>
             </div>
         <!--스터디모임 검색결과 출력-->
@@ -290,7 +319,7 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
+                        <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
@@ -301,7 +330,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
+                        <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
@@ -312,7 +341,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
+                        <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
@@ -323,7 +352,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
+                        <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
 
                             <div class="portfolio-box-caption">
@@ -335,7 +364,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
+                        <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
@@ -346,7 +375,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+                        <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
                             <div class="portfolio-box-caption p-3">
                                 <div class="project-category text-white-50">Category</div>

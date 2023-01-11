@@ -31,6 +31,15 @@ public class tb_srVO {
 	}
 	
 	
+	public tb_srVO(String sr_name, String sr_gender, int sr_aog, String location) {
+		super();
+		this.sr_name = sr_name;
+		this.sr_gender = sr_gender;
+		this.sr_aog = sr_aog;
+		this.location = location;
+	}
+
+
 	public tb_srVO(String sr_name, String sr_gender, int sr_aog, int sr_capacity, String location) {
 		super();
 		this.sr_name = sr_name;
