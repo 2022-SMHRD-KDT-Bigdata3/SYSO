@@ -21,11 +21,11 @@ public class tb_boardDAO {
 		
 	}
 	
-	public int boardDelete(int b_num) {
+	public int boardDelete(tb_boardVO vo) {
 		
 		int res = 0;
 		session = sqlSessionFactory.openSession(true);
-		res = session.delete("boardDelete", b_num);
+		res = session.delete("boardDelete", vo);
 		session.close();
 		return res;
 	}

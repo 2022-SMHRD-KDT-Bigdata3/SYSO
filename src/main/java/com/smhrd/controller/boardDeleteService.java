@@ -10,9 +10,9 @@ import com.smhrd.model.tb_boardDAO;
 import com.smhrd.model.tb_boardVO;
 
 /**
- * Servlet implementation class boardInsertService
+ * Servlet implementation class boardDeleteService
  */
-public class boardInsertService extends HttpServlet {
+public class boardDeleteService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -30,7 +30,7 @@ public class boardInsertService extends HttpServlet {
 		tb_boardVO vo = new tb_boardVO(b_title, b_contents, user_id);
 		
 		tb_boardDAO dao = new tb_boardDAO();
-		int res = dao.boardInsert(vo);
+		int res = dao.boardDelete(vo);
 		
 		if(res>0) { //삽입성공
 			System.out.println("성공");
@@ -39,11 +39,6 @@ public class boardInsertService extends HttpServlet {
 			System.out.println("실패");
 			//response.sendRedirect("#");
 		}
-		
-		
-		
-		
-		
 	}
 
 }

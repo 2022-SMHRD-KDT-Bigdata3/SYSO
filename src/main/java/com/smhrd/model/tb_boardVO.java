@@ -26,6 +26,11 @@ public class tb_boardVO {
 	}
 
 
+	public tb_boardVO(String b_title2, String b_contents2, String user_id2) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	@Override
 	public String toString() {
 		return "tb_boardVO [b_num=" + b_num + ", sr_num=" + sr_num + ", b_title=" + b_title + ", b_contents="
