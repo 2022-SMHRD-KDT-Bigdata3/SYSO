@@ -103,39 +103,93 @@
 					<h2 class="text-white font-weight-bold">스터디모임 만들기</h2>
 					<hr class="divider" />
 				</div>
-				<div class="col-lg-8 align-self-baseline"></div>
-				
-				<form class="row g-3" style='background-color:white;'>
-					<div class="col-md-6">
-						<label for="inputEmail4" class="form-label">스터디룸 이름</label> <input
-							type="text" name="sr_num" class="form-control" id="sr_num">
-					</div>
-					<div class="col-md-6">
-						<label for="inputPassword4" class="form-label">연령대</label> <input
-							type="text" name="sr_aog" class="form-control" id="sr_aog">
-					</div>
-					<div class="col-12">
-						<label for="inputAddress" class="form-label">허용인원수</label> <input
-							type="number" name="sr_capacity" class="form-control" id="sr_capacity"
-							placeholder="ex) 5">
-					</div>
-					<div class="col-12">
-						<label for="inputAddress2" class="form-label">응시지역</label> <input
-							type="text" name="location" class="form-control" id="location"
-							placeholder="ex) 광주광역시">
-					</div>
-					<div class="col-md-4">
-						<label for="inputState" class="form-label" name="sr_gender">방성별</label> <select
-							id="sr_gender" class="form-select">
-							<option selected>남녀</option>
-							<option>남자만</option>
-							<option>여자만</option>							
-						</select>
-					</div>			
-					<div class="col-12">
-						<button type="submit" class="btn btn-primary">생성</button>
-					</div>
-				</form>
+								<div class="col-lg-8 align-self-baseline"></div>
+				<div class="card">
+                    <div class="card-body">
+                        <div class="container text-center">
+                            <div class="row">
+                              <div class="col-4">
+                                <input type="text" class="form-control" placeholder="스터디 이름" aria-label="Username">
+                                <ul></ul>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="시험과목"><!--aria-label="Username" aria-describedby="addon-wrapping">-->
+                                </div>
+                                <ul></ul>
+                                <div class="col">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="m">
+                                        <label class="form-check-label" for="inlineCheckbox1">남자</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="f">
+                                        <label class="form-check-label" for="inlineCheckbox2">여자</label>
+                                      </div>
+                                </div>
+                                <ul></ul>
+                                <div class="col">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="10">
+                                        <label class="form-check-label" for="inlineCheckbox1">10대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="20">
+                                        <label class="form-check-label" for="inlineCheckbox2">20대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="30">
+                                        <label class="form-check-label" for="inlineCheckbox1">30대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="40">
+                                        <label class="form-check-label" for="inlineCheckbox2">40대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="50">
+                                        <label class="form-check-label" for="inlineCheckbox1">50대</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="60">
+                                        <label class="form-check-label" for="inlineCheckbox2">60대</label>
+                                    </div>
+                                </div>
+                                <ul></ul>
+                                <div class="col">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>응시지역</option>
+                                        <option value="Seoul">서울</option>
+                                        <option value="Incheon">인천</option>
+                                        <option value="Gyeonggi">경기</option>
+                                        <option value="Gangwon">강원</option>
+                                        <option value="Chungnam">충남</option>
+                                        <option value="Chungbuk">충북</option>
+                                        <option value="Daejeon">대전</option>
+                                        <option value="Jeonbuk">전북</option>
+                                        <option value="Jeonnam">전남</option>
+                                        <option value="Gwangju">광주</option>
+                                        <option value="Gyeongnam">경남</option>
+                                        <option value="Kyeongbuk">경북</option>
+                                        <option value="Busan">부산</option>
+                                        <option value="Daegu">대구</option>
+                                        <option value="Ulsan">울산</option>
+                                        <option value="Jeju">제주</option>
+                                      </select>    
+                                </div>
+                            </div>
+                              <div class="col-8">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="스터디 소개글 작성"></textarea>
+                        
+                                </div>
+                              </div>
+                              <ul></ul>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" type="button">만들기</button>
+                                 
+                            </div>
+                          </div>
+                    </div>
+                  </div>
 			</div>
 		</div>		
 				

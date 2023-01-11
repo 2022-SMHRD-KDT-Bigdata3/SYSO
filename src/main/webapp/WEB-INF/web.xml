@@ -29,10 +29,17 @@
   	<servlet-class>com.smhrd.controller.makestudy</servlet-class>
   </servlet>
   <servlet>
+<<<<<<< HEAD
   	<servlet-name>boardInsertService</servlet-name>
   	<display-name>boardInsertService</display-name>
   	<description></description>
   	<servlet-class>com.smhrd.controller.boardInsertService</servlet-class>
+=======
+  	<servlet-name>evenvtInsertCal</servlet-name>
+  	<display-name>evenvtInsertCal</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.evenvtInsertCal</servlet-class>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO.git
   </servlet>
 
   
@@ -54,8 +61,13 @@
   	<url-pattern>/makestudy</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+<<<<<<< HEAD
   	<servlet-name>boardInsertService</servlet-name>
   	<url-pattern>/boardInsertService</url-pattern>
+=======
+  	<servlet-name>evenvtInsertCal</servlet-name>
+  	<url-pattern>/evenvtInsertCal</url-pattern>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO.git
   </servlet-mapping>
 
 </web-app>
