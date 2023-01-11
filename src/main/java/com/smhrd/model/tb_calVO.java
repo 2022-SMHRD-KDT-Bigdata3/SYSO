@@ -16,7 +16,6 @@ public class tb_calVO {
 	
 
 	
-	
 
 
 	public tb_calVO(String user_id, String title, String start1, String end1) {
