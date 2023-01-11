@@ -3,81 +3,80 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>JoinService</servlet-name>
-  	<display-name>JoinService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>LoginService</servlet-name>
-  	<display-name>LoginService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.LoginService</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>caladd</servlet-name>
-  	<display-name>caladd</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.caladd</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>makestudy</servlet-name>
-  	<display-name>makestudy</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.makestudy</servlet-class>
-  </servlet>
-  <servlet>
-<<<<<<< HEAD
-  	<servlet-name>boardInsertService</servlet-name>
-  	<display-name>boardInsertService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.boardInsertService</servlet-class>
-=======
-  	<servlet-name>evenvtInsertCal</servlet-name>
-  	<display-name>evenvtInsertCal</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.evenvtInsertCal</servlet-class>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO.git
-  </servlet>
-  <servlet>
-  	<servlet-name>boardDeleteService</servlet-name>
-  	<display-name>boardDeleteService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.boardDeleteService</servlet-class>
-  </servlet>
+   <display-name>Archetype Created Web Application</display-name>
+   <servlet>
+      <servlet-name>JoinService</servlet-name>
+      <display-name>JoinService</display-name>
+      <description></description>
+      <servlet-class>com.smhrd.controller.JoinService</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>LoginService</servlet-name>
+      <display-name>LoginService</display-name>
+      <description></description>
+      <servlet-class>com.smhrd.controller.LoginService</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>caladd</servlet-name>
+      <display-name>caladd</display-name>
+      <description></description>
+      <servlet-class>com.smhrd.controller.caladd</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>makestudy</servlet-name>
+      <display-name>makestudy</display-name>
+      <description></description>
+      <servlet-class>com.smhrd.controller.makestudy</servlet-class>
+   </servlet>
+   <servlet>
 
-  
-  
-  <servlet-mapping>
-  	<servlet-name>JoinService</servlet-name>
-  	<url-pattern>/JoinService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>LoginService</servlet-name>
-  	<url-pattern>/LoginService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>caladd</servlet-name>
-  	<url-pattern>/caladd</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>makestudy</servlet-name>
-  	<url-pattern>/makestudy</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-<<<<<<< HEAD
-  	<servlet-name>boardInsertService</servlet-name>
-  	<url-pattern>/boardInsertService</url-pattern>
-=======
-  	<servlet-name>evenvtInsertCal</servlet-name>
-  	<url-pattern>/evenvtInsertCal</url-pattern>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO.git
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>boardDeleteService</servlet-name>
-  	<url-pattern>/boardDeleteService</url-pattern>
-  </servlet-mapping>
+      <servlet-name>boardInsertService</servlet-name>
+      <display-name>boardInsertService</display-name>
+      <description></description>
+      <servlet-class>com.smhrd.controller.boardInsertService</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>evenvtInsertCal</servlet-name>
+      <display-name>evenvtInsertCal</display-name>
+      <description></description>
+      <servlet-class>com.smhrd.controller.evenvtInsertCal</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>boardDeleteService</servlet-name>
+      <display-name>boardDeleteService</display-name>
+      <description></description>
+      <servlet-class>com.smhrd.controller.boardDeleteService</servlet-class>
+   </servlet>
+
+
+
+   <servlet-mapping>
+      <servlet-name>JoinService</servlet-name>
+      <url-pattern>/JoinService</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>LoginService</servlet-name>
+      <url-pattern>/LoginService</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>caladd</servlet-name>
+      <url-pattern>/caladd</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>makestudy</servlet-name>
+      <url-pattern>/makestudy</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>boardInsertService</servlet-name>
+      <url-pattern>/boardInsertService</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>evenvtInsertCal</servlet-name>
+      <url-pattern>/evenvtInsertCal</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>boardDeleteService</servlet-name>
+      <url-pattern>/boardDeleteService</url-pattern>
+   </servlet-mapping>
 
 </web-app>
