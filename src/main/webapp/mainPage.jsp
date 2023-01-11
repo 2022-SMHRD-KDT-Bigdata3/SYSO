@@ -1,4 +1,7 @@
 
+<%@page import="com.smhrd.model.tb_calVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.tb_calDAO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="com.smhrd.model.tb_user"%>
@@ -48,6 +51,8 @@
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     timeZone: 'UTC',
                     initialView: 'dayGridMonth', // 홈페이지에서 다른 형태의 view를 확인할  수 있다.
+                    selectable: true,
+                    droppable: true,
                     events:[ // 일정 데이터 추가 , DB의 event를 가져오려면 JSON 형식으로 변환해 events에 넣어주면된다.
                         {
                             title:'일정',
@@ -64,12 +69,12 @@
                                 $("#calendarModal").modal("show"); // modal 나타내기
                                 $("#addCalendar").on("click",function(){  // modal의 추가 버튼 클릭 시
                                     var user_id = $("#hiddenid").val();
-                                    var content = $("#calendar_content").val();
+                                    var title = $("#calendar_content").val();
                                     var start_date = $("#calendar_start_date").val();
                                     var end_date = $("#calendar_end_date").val();
                                    
                                     //내용 입력 여부 확인
-                                    if(content == null || content == ""){
+                                    if(title == null || title == ""){
                                         alert("내용을 입력하세요.");
                                     }else if(start_date == "" || end_date ==""){
                                         alert("날짜를 입력하세요.");
@@ -78,7 +83,7 @@
                                     }else{ // 정상적인 입력 시
                                         var obj = {
                                     		"user_id" : user_id,
-                                            "title" : content,
+                                            "title" : title,
                                             "start" : start_date,
                                             "end" : end_date
                                         }//전송할 객체 생성
@@ -88,17 +93,20 @@
                                         	type : "post",
                                         	data : {
                                         		"user_id" : user_id,
-                                                "title" : content,
+                                                "title" : title,
                                                 "start" : start_date,
                                                 "end" : end_date
                                             },
-                                            //dataType : "json",
+                                            dataType : "json",
                                             success : function(data){
                                             	console.log(data);
+                                            	
+                                        
                                             },
                                             error : function(){ alert("error"); }                                        	
                                         });
                                     }
+                                //저장하는 함수
                                 });
                             }
                         }
@@ -109,14 +117,7 @@
                 calendar.render();
             });
             
-<%
-Gson gson = new Gson();
-String content = (String)session.getAttribute("content");
-System.out.println(content);
 
-String result = gson.toJson(content);
-System.out.println(result);
-%>
 </script>
 
 </head>
@@ -157,7 +158,16 @@ System.out.println(result);
 					<%if (info!=null){ %>
 					<li class="nav-item"><a class="nav-link"
 						href="mainPage.jsp#page-top"><%=info.getUser_id()%>님 환영합니다</a></li>
-					<%}else{ %>
+						
+					<%
+					//로그인에 성공하면 user_id와 비교해서 디비의 일정을 가져온다
+					tb_calDAO dao = new tb_calDAO();
+					ArrayList<tb_calVO> list = dao.eventSelect(info.getUser_id());
+					//확인용 콘솔 출력
+					for (int i =0 ;i<list.size();i++){
+						System.out.println(list.get(i).toString());
+					}
+					}else{ %>
 					<h3>현재 아이디값 못찾음</h3><%} %>
 				</ul>
 			</div>
@@ -199,11 +209,7 @@ System.out.println(result);
                 <div class="modal-body">
                     <div class="form-group">
                     	<input type="hidden" name="user_id"  id ="hiddenid" value="<%=info.getUser_id()%>"/>                   
-                    	<input type="hidden" name="title"  id ="title" />
-                    	<input type="hidden" name="start"  id ="start"  />
-                    	<input type="hidden" name="end"  id ="end" />
-               
-                        <label for="taskId" class="col-form-label">일정 내용</label>
+                        <label for="taskId" class="col-form-label">일정 내용</label><!-- title컬럼에 들어가야함 -->
                         <input type="text" class="form-control" id="calendar_content" name="calendar_content">
                         <label for="taskId" class="col-form-label">시작 날짜</label>
                         <input type="date" class="form-control" id="calendar_start_date" name="calendar_start_date">

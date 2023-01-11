@@ -1,5 +1,8 @@
 package com.smhrd.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -25,6 +28,13 @@ public class tb_calDAO {
 			session.close();
 		}
 		return res;
+	}
+
+	public ArrayList<tb_calVO> eventSelect(String user_id) {
+		session = sqlSessionFactory.openSession(true);
+		List<tb_calVO>list = session.selectList("eventselect", user_id);
+		session.close();
+		return (ArrayList<tb_calVO>)list;
 	}
 	
 	

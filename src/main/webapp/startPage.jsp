@@ -225,7 +225,7 @@
 														aria-label="Default select example">
 														<option selected>연령대</option>
 														<option value="10">10대</option>
-														<option value="20">20대</option>
+														<option value="20">20대</option>						
 														<option value="30">30대</option>
 														<option value="40">40대</option>
 														<option value="50">50대</option>

@@ -16,10 +16,12 @@ public class tb_calVO {
 	
 	
 	
-	public tb_calVO(String user_id, String content, String start1, String end1) {
+
+
+	public tb_calVO(String user_id, String title, String start1, String end1) {
 		super();
 		this.user_id = user_id;
-		this.content = content;
+		this.title = title;
 		this.start1 = start1;
 		this.end1 = end1;
 	}
