@@ -18,7 +18,7 @@ public class tb_calDAO {
 		
 		try {
 			
-			res = session.insert("tb_calMapper", vo);
+			res = session.insert("caladd", vo);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
