@@ -75,7 +75,7 @@
                                         //     var startdate=moment(element.start1).format('YYYY-MM-DD');
                                         //     var enddate=moment(end1).format('YYYY-MM-DD');                                                                              
                                              events.push({
-                                            	 		title: element.title,
+                                                      title: element.title,
                                                         start: startdate,
                                                         end: enddate                                                 
                                               }); //.push()                                          
@@ -247,7 +247,7 @@ System.out.println(result);
                <!-- 세션의 아이디값 확인 -->
                <%
                if (info != null) {
-            	   //디비확인용 콘솔확인
+                  //디비확인용 콘솔확인
                tb_calDAO dao = new tb_calDAO();
                ArrayList<tb_calVO> list = dao.eventSelect(info.getUser_id());
                for (int i = 0; i < list.size(); i++) {
