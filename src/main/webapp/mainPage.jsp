@@ -67,15 +67,15 @@
                                             $.each(result, function(index, element) {
                                                 var startdate=element.start1;
                                                var enddate=element.end1;
-                                               var user_id=element.user_id;
+                                   
+                                           
                                              if(enddate==null){
                                                  enddate=element.startdate;
                                              }                                             
                                         //     var startdate=moment(element.start1).format('YYYY-MM-DD');
                                         //     var enddate=moment(end1).format('YYYY-MM-DD');                                                                              
                                              events.push({
-                                            	 id : user_id,
-                                            	 		title: element.title,
+                                                      title: element.title,
                                                         start: startdate,
                                                         end: enddate                                                 
                                               }); //.push()                                          
@@ -148,7 +148,6 @@
                var events = new Array();
                for(var i=0; i<allEvent.length; i++){
                   var obj = new Object();   
-               
                   obj.title =  allEvent[i]._def.title; //이벤트 명칭
                   obj.allDay = allEvent[i]._def.allDay; //하루종일의 이벤트인지 확인하는 불리언
                   obj.start =   allEvent[i]._instance.range.start;
@@ -201,7 +200,14 @@
        
         
             
+<%
+Gson gson = new Gson();
+String content = (String)session.getAttribute("content");
+System.out.println(content);
 
+String result = gson.toJson(content);
+System.out.println(result);
+%>
 </script>
 
 </head>
@@ -241,7 +247,7 @@
                <!-- 세션의 아이디값 확인 -->
                <%
                if (info != null) {
-            	   //디비확인용 콘솔확인
+                  //디비확인용 콘솔확인
                tb_calDAO dao = new tb_calDAO();
                ArrayList<tb_calVO> list = dao.eventSelect(info.getUser_id());
                for (int i = 0; i < list.size(); i++) {
