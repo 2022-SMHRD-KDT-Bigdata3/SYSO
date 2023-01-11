@@ -17,16 +17,16 @@ public class caladd extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String user_id=request.getParameter("user_id");
-		String title=request.getParameter("title");
-		String start=request.getParameter("start");
-		String end=request.getParameter("end");
+		String content=request.getParameter("title");
+		String start1=request.getParameter("start");
+		String end1=request.getParameter("end");
 		
 		System.out.println(user_id);
-		System.out.println(title);
-		System.out.println(start);
-		System.out.println(end);
-		
-		tb_calVO vo = new tb_calVO();
+		System.out.println(content);
+		System.out.println(start1);
+		System.out.println(end1);
+
+		tb_calVO vo = new tb_calVO(user_id, content, start1, end1);
 		tb_calDAO dao = new tb_calDAO();
 		
 		int res = dao.caladd(vo);
