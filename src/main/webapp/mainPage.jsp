@@ -67,7 +67,7 @@
                                     var content = $("#calendar_content").val();
                                     var start_date = $("#calendar_start_date").val();
                                     var end_date = $("#calendar_end_date").val();
-                                    
+                                   
                                     //내용 입력 여부 확인
                                     if(content == null || content == ""){
                                         alert("내용을 입력하세요.");
@@ -82,13 +82,27 @@
                                             "start" : start_date,
                                             "end" : end_date
                                         }//전송할 객체 생성
-    
                                         console.log(obj); //서버로 해당 객체를 전달해서 DB 연동 가능
+                                        $.ajax({
+                                        	url : "caladd",
+                                        	type : "post",
+                                        	data : {
+                                        		"user_id" : user_id,
+                                                "title" : content,
+                                                "start" : start_date,
+                                                "end" : end_date
+                                            },
+                                            dataType : "json",
+                                            success : function(data){
+                                            	console.log(data);
+                                            },
+                                            error : function(){ alert("error"); }                                        	
+                                        });
                                     }
                                 });
                             }
                         }
-                    },
+                    },                    
                     editable: true, // false로 변경 시 draggable 작동 x 
                     displayEventTime: false // 시간 표시 x
                 });
@@ -184,7 +198,11 @@ System.out.println(result);
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                    	<input type="hidden" name="user_id"  id ="hiddenid" value="<%=info.getUser_id()%>"/>
+                    	<input type="hidden" name="user_id"  id ="hiddenid" value="<%=info.getUser_id()%>"/>                   
+                    	<input type="hidden" name="title"  id ="title" value=""/>
+                    	<input type="hidden" name="start"  id ="start"  value=""/>
+                    	<input type="hidden" name="end"  id ="end" value=""/>
+               
                         <label for="taskId" class="col-form-label">일정 내용</label>
                         <input type="text" class="form-control" id="calendar_content" name="calendar_content">
                         <label for="taskId" class="col-form-label">시작 날짜</label>

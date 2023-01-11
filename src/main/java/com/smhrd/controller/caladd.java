@@ -13,6 +13,8 @@ public class caladd extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String title=request.getParameter("title");
+		System.out.println(title);
 	}
 
 }
