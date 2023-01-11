@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tb_calMapper">
-	
+
+	<insert id="caladd" parameterType="com.smhrd.model.tb_calVO">	
+		insert into tb_calendar values(calendar_seq.nextVal,#{user_id},#{groupid},#{title},#{writer},#{content},#{start1},#{end1},#{allday},#{textcolor},#{backgroundcolor},#{bordercolor})
+	</insert>
 
 </mapper>

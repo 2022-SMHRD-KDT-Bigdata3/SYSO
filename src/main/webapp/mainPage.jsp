@@ -92,7 +92,7 @@
                                                 "start" : start_date,
                                                 "end" : end_date
                                             },
-                                            dataType : "json",
+                                            //dataType : "json",
                                             success : function(data){
                                             	console.log(data);
                                             },
@@ -199,9 +199,9 @@ System.out.println(result);
                 <div class="modal-body">
                     <div class="form-group">
                     	<input type="hidden" name="user_id"  id ="hiddenid" value="<%=info.getUser_id()%>"/>                   
-                    	<input type="hidden" name="title"  id ="title" value=""/>
-                    	<input type="hidden" name="start"  id ="start"  value=""/>
-                    	<input type="hidden" name="end"  id ="end" value=""/>
+                    	<input type="hidden" name="title"  id ="title" />
+                    	<input type="hidden" name="start"  id ="start"  />
+                    	<input type="hidden" name="end"  id ="end" />
                
                         <label for="taskId" class="col-form-label">일정 내용</label>
                         <input type="text" class="form-control" id="calendar_content" name="calendar_content">
