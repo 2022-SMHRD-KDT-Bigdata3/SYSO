@@ -34,8 +34,6 @@ public class joinStudyRoom extends HttpServlet {
 		
 		tb_mysrVO mysr_info = new  tb_mysrVO(sr_num, user_id, sr_name);
 		
-		
-		
 		tb_srDAO dao = new tb_srDAO();
 		int res = dao.joinStudyRoom(mysr_info);
 		if(res > 0) {

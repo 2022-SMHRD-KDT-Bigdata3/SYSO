@@ -22,12 +22,13 @@
   </environments>
 
 
-     
    
   <mappers>
     <mapper resource="com/smhrd/DataBase/tb_userMapper.xml"/>
     <mapper resource="com/smhrd/DataBase/tb_calMapper.xml"/>
+    <mapper resource="com/smhrd/DataBase/tb_boardMapper.xml"/>
     <mapper resource="com/smhrd/DataBase/tb_srMapper.xml"/>
+
   </mappers>
   
 </configuration>

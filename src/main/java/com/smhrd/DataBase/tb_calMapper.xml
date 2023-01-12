@@ -11,7 +11,7 @@
 	</select>  
 
     <select id="calget" resultType="com.smhrd.model.tb_calVO">
-     select * from tb_calendar where user_id = 'admin'
+     select * from tb_calendar where user_id = #{user_id} 
   </select> 
 
 </mapper>

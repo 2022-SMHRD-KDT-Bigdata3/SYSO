@@ -6,6 +6,9 @@
 <%@page import="com.smhrd.model.tb_user"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+    <%
+   tb_user info = (tb_user) session.getAttribute("info");
+   %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -57,8 +60,11 @@
                     timeZone: 'UTC',
                     initialView: 'dayGridMonth', // 홈페이지에서 다른 형태의 view를 확인할  수 있다.
                     events:function(info, successCallback, failureCallback){
+                    
                         $.ajax({
+                        	
                             url: 'calget',
+                            data : {"user_id" : '<%=info.getUser_id()%>'},
                             dataType: 'json',
                             success: 
                                 function(result) {          
@@ -146,7 +152,8 @@
                console.log(allEvent)
                
                var events = new Array();
-               for(var i=0; i<allEvent.length; i++){
+               for(var i=0; i<allEvent.length
+               ; i++){
                   var obj = new Object();   
                   obj.title =  allEvent[i]._def.title; //이벤트 명칭
                   obj.allDay = allEvent[i]._def.allDay; //하루종일의 이벤트인지 확인하는 불리언
@@ -202,9 +209,7 @@
 </head>
 <body id="page-top">
    <!-- 세션에 사용자정보 가져오기 -->
-   <%
-   tb_user info = (tb_user) session.getAttribute("info");
-   %>
+  
    <!-- Navigation-->
    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
       id="mainNav">
@@ -267,7 +272,7 @@
          <div
             class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end">
-               <h2 class="text-white font-weight-bold">사용자의 일정</h2>
+               <h2 class="text-white font-weight-bold"><%=info.getUser_nick()%>님의 캘린더</h2>
                <hr class="divider" />
             </div>
             <div class="col-lg-8 align-self-baseline">
@@ -294,14 +299,18 @@
                               </div>
                               <div class="modal-body">
                                  <div class="form-group">
-                                    <input type="hidden" name="user_id" id="hiddenid"
-                                       value="<%=info.getUser_id()%>" />
-                                       <label for="taskId"class="col-form-label">일정 내용</label> 
-                                       <input type="text"class="form-control" id="calendar_content"name="calendar_content"> 
-                                       <label for="taskId"class="col-form-label">시작 날짜</label> 
-                                       <input type="date"class="form-control" id="calendar_start_date"name="calendar_start_date"> 
-                                       <label for="taskId"class="col-form-label">종료 날짜</label> 
-                                       <input type="date"class="form-control" id="calendar_end_date" name="calendar_end_date">
+
+                                    <input type="hidden" name="user_id" id="hiddenid" value="<%=info.getUser_id()%>" /> 
+                                    <input type="hidden" name="title" id="title" /> 
+                                    <input type="hidden" name="start" id="start" /> 
+                                    <input type="hidden" name="end" id="end" />
+                                     <label for="taskId" class="col-form-label">일정 내용</label> 
+                                     <input type="text" class="form-control" id="calendar_content" name="calendar_content"> 
+                                     <label for="taskId" class="col-form-label">시작 날짜</label> 
+                                     <input type="date" class="form-control" id="calendar_start_date" name="calendar_start_date"> 
+                                     <label for="taskId" class="col-form-label">종료 날짜</label> 
+                                     <input type="date" class="form-control" id="calendar_end_date"  name="calendar_end_date">
+                                 
                                  </div>
                               </div>
                               <div class="modal-footer">

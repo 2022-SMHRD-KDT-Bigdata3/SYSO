@@ -23,11 +23,12 @@ public class boardDeleteService extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
+		int sr_num = Integer.parseInt(request.getParameter("sr_num"));
 		String b_title= request.getParameter("b_title");
 		String b_contents = request.getParameter("b_contents");
 		String user_id = request.getParameter("user_id");
 		
-		tb_boardVO vo = new tb_boardVO(b_title, b_contents, user_id);
+		tb_boardVO vo = new tb_boardVO(sr_num, b_title, b_contents, user_id);
 		
 		tb_boardDAO dao = new tb_boardDAO();
 		int res = dao.boardDelete(vo);

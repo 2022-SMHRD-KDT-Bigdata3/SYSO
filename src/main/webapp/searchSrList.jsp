@@ -68,21 +68,11 @@
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="container text-center">
                         <div class="row">
-                          <div class="col align-self-center">
-                            <h2 class="text-white font-weight-bold">검색 결과</h2>
-                            <hr class="divider" />
-                            
-                          </div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        
-               <!-- 스터디모임 찾기-->
+                         <!-- 여기!  -->
+                                  <!-- 스터디모임 찾기-->
         <section class="page-section" id="searchRoom">
             <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">검색결과</h2>
+                <h2 class="text-center mt-0" style='color:white'>검색결과</h2>
                 <hr class="divider" />
             </div>
             <div class="container px-4 px-lg-5">
@@ -119,6 +109,14 @@
                   </div>
             </div>
         </section>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+         
 
         
         

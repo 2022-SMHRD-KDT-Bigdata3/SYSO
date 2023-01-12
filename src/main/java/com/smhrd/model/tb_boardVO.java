@@ -20,14 +20,31 @@ public class tb_boardVO {
 		this.user_id = user_id;
 	}
 
-
 	public tb_boardVO() {
 		super();
 	}
+	
+
+	public tb_boardVO(int sr_num, String b_title, String b_contents, String user_id) {
+		super();
+		this.sr_num = sr_num;
+		this.b_title = b_title;
+		this.b_contents = b_contents;
+		this.user_id = user_id;
+	}
 
 
-	public tb_boardVO(String b_title2, String b_contents2, String user_id2) {
-		// TODO Auto-generated constructor stub
+	public tb_boardVO(int b_num, String b_title, String b_contents) {
+		super();
+		this.b_num = b_num;
+		this.b_title = b_title;
+		this.b_contents = b_contents;
+	}
+
+	public tb_boardVO(String b_title, String b_contents) {
+		super();
+		this.b_title = b_title;
+		this.b_contents = b_contents;
 	}
 
 
@@ -36,6 +53,8 @@ public class tb_boardVO {
 		return "tb_boardVO [b_num=" + b_num + ", sr_num=" + sr_num + ", b_title=" + b_title + ", b_contents="
 				+ b_contents + ", b_ymd=" + b_ymd + ", user_id=" + user_id + "]";
 	}
+
+
 
 
 	public int getB_num() {
@@ -96,11 +115,19 @@ public class tb_boardVO {
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-	
-	
-	
-	
-	
+
 	
 
-}
+
+	}
+
+
+
+
+
+
+
+
+
+
+	

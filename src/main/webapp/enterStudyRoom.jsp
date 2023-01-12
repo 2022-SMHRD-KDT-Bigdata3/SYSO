@@ -1,4 +1,7 @@
+<%@page import="com.smhrd.model.tb_boardVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.tb_mysrVO"%>
+<%@page import="com.smhrd.model.tb_boardDAO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="com.smhrd.model.tb_user"%>
@@ -258,6 +261,16 @@
             </div>
         </header>
         <!-- 작성된 게시글 목록 출력?-->
+        <%tb_boardDAO dao = new tb_boardDAO();
+              ArrayList<tb_boardVO> list = dao.boardSelect(info.getUser_id());
+               
+               
+               for (int i = 0; i < list.size(); i++) {
+                  System.out.println(list.get(i).toString());
+               %>
+               <li><%=i + 1%> . <%=list.get(i).getB_title()%> </li> 
+                  
+                  <%} %>
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">게시판</h2>

@@ -2,14 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tb_boardMapper">
 
-	<insert id="boardInsert" parameterType="com.smhrd.model.tb_boardVO">
-		insert into tb_board
-		values(b_num.nextVal,#{sr_num},#{b_title},#{b_contents},sysdate,#{user_id})
-	</insert>
+   <insert id="boardInsert" parameterType="com.smhrd.model.tb_boardVO">
+      insert into tb_board
+      values(b_num.nextVal,#{sr_num},#{b_title},#{b_contents},sysdate,#{user_id})
+   </insert>
 
 
-	<delete id="boardDelete" parameterType="Integer">
-		delete from tb_board where b_num = #{b_num}
-	</delete>
+   
+   <select id="boardSelect" parameterType="String" resultType="com.smhrd.model.tb_boardVO">
+      select * from tb_board where user_id=#{user_id} 
+   </select>
+   
+   <delete id="boardDelete" parameterType="Integer">
+      delete from tb_board where b_num = #{b_num}
+   </delete>
 
-</mapper>
+
+
+</mapper> 
