@@ -203,18 +203,7 @@
                        alert("error"); }         
                   })   
                   }  
-            
-       
-        
-            
-<%
-Gson gson = new Gson();
-String content = (String)session.getAttribute("content");
-System.out.println(content);
 
-String result = gson.toJson(content);
-System.out.println(result);
-%>
 </script>
 
 </head>
@@ -252,7 +241,7 @@ System.out.println(result);
                <!-- 세션의 아이디값 확인 -->
                <%
                if (info != null) {
-                  //디비확인용 콘솔확인
+                  //user_id에 대한 일정DB 확인용 콘솔 출력
                tb_calDAO dao = new tb_calDAO();
                ArrayList<tb_calVO> list = dao.eventSelect(info.getUser_id());
                for (int i = 0; i < list.size(); i++) {
@@ -310,6 +299,7 @@ System.out.println(result);
                               </div>
                               <div class="modal-body">
                                  <div class="form-group">
+<<<<<<< HEAD
                                     <input type="hidden" name="user_id" id="hiddenid" value="<%=info.getUser_id()%>" /> 
                                     <input type="hidden" name="title" id="title" /> 
                                     <input type="hidden" name="start" id="start" /> 
@@ -320,6 +310,16 @@ System.out.println(result);
                                      <input type="date" class="form-control" id="calendar_start_date" name="calendar_start_date"> 
                                      <label for="taskId" class="col-form-label">종료 날짜</label> 
                                      <input type="date" class="form-control" id="calendar_end_date"  name="calendar_end_date">
+=======
+                                    <input type="hidden" name="user_id" id="hiddenid"
+                                       value="<%=info.getUser_id()%>" />
+                                       <label for="taskId"class="col-form-label">일정 내용</label> 
+                                       <input type="text"class="form-control" id="calendar_content"name="calendar_content"> 
+                                       <label for="taskId"class="col-form-label">시작 날짜</label> 
+                                       <input type="date"class="form-control" id="calendar_start_date"name="calendar_start_date"> 
+                                       <label for="taskId"class="col-form-label">종료 날짜</label> 
+                                       <input type="date"class="form-control" id="calendar_end_date" name="calendar_end_date">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO
                                  </div>
                               </div>
                               <div class="modal-footer">
@@ -341,6 +341,11 @@ System.out.println(result);
    </header>
 
    <!-- 스터디모임 추천-->
+   <%
+   //스터디모임의 정보를 불러오기
+   //tb_user info = (tb_user) session.getAttribute("info");
+   //DB에 저장된 값을 가져와야함
+   %>
    <section class="page-section" id="services">
       <div class="container px-4 px-lg-5">
          <h2 class="text-center mt-0">추천 스터디</h2>
@@ -351,9 +356,23 @@ System.out.println(result);
       <div class="container-fluid p-0">
          <div class="row g-0">
             <div class="col-lg-4 col-sm-6">
-               <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg"
-                  title="Project Name"> <img class="img-fluid"
-                  src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
+               <a class="portfolio-box"title="Project Name"> 
+               <!--<a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">   -->
+              <img class="img-fluid"src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
+                  <div class="portfolio-box-caption">
+                     <div class="project-category text-white-50">Category</div>
+                     <div class="project-name">Project Name</div>
+                     <ul></ul>
+                     <form action="joinStudyRoom">
+                     <input type="hidden" name="user_id" id="hiddenid" value="<%=info.getUser_id()%>" />
+                     <button type="submit" class="btn btn-outline-light">가입</button>
+                     </form>
+                  </div>
+               </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+               <a class="portfolio-box"title="Project Name"> 
+               <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
                   <div class="portfolio-box-caption">
                      <div class="project-category text-white-50">Category</div>
                      <div class="project-name">Project Name</div>
@@ -363,9 +382,8 @@ System.out.println(result);
                </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-               <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg"
-                  title="Project Name"> <img class="img-fluid"
-                  src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
+               <a class="portfolio-box"title="Project Name"> 
+               <img class="img-fluid"src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
                   <div class="portfolio-box-caption">
                      <div class="project-category text-white-50">Category</div>
                      <div class="project-name">Project Name</div>
@@ -375,9 +393,8 @@ System.out.println(result);
                </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-               <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg"
-                  title="Project Name"> <img class="img-fluid"
-                  src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
+               <a class="portfolio-box"title="Project Name"> 
+               <img class="img-fluid"src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
                   <div class="portfolio-box-caption">
                      <div class="project-category text-white-50">Category</div>
                      <div class="project-name">Project Name</div>
@@ -387,10 +404,8 @@ System.out.println(result);
                </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-               <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg"
-                  title="Project Name"> <img class="img-fluid"
-                  src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-
+               <a class="portfolio-box" title="Project Name"> 
+               <img class="img-fluid"src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
                   <div class="portfolio-box-caption">
                      <div class="project-category text-white-50">Category</div>
                      <div class="project-name">Project Name</div>
@@ -400,21 +415,8 @@ System.out.println(result);
                </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-               <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg"
-                  title="Project Name"> <img class="img-fluid"
-                  src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                  <div class="portfolio-box-caption">
-                     <div class="project-category text-white-50">Category</div>
-                     <div class="project-name">Project Name</div>
-                     <ul></ul>
-                     <button type="button" class="btn btn-outline-light">가입</button>
-                  </div>
-               </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-               <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg"
-                  title="Project Name"> <img class="img-fluid"
-                  src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
+               <a class="portfolio-box"title="Project Name"> 
+               <img class="img-fluid"src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
                   <div class="portfolio-box-caption p-3">
                      <div class="project-category text-white-50">Category</div>
                      <div class="project-name">Project Name</div>
