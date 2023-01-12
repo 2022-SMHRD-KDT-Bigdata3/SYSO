@@ -37,11 +37,11 @@ public class tb_calDAO {
 		return (ArrayList<tb_calVO>)list;
 	}
 	
-public List<tb_calVO> calget() {		
+public List<tb_calVO> calget(String user_id) {		
 		session = sqlSessionFactory.openSession(true);
 		List<tb_calVO> list =null;; 
 		try {	
-			list = session.selectList("calget");
+			list = session.selectList("calget", user_id);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

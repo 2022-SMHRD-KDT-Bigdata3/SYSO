@@ -1,4 +1,4 @@
-
+<%@page import="com.smhrd.model.tb_boardDAO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="com.smhrd.model.tb_user"%>
@@ -186,6 +186,7 @@ System.out.println(result);%>
                               <div id="calendarBox">
                                  <div id="calendar"></div>
                               </div>
+<<<<<<< HEAD
 
                               <!-- modal 추가 -->
                               <div class="modal fade" id="calendarModal" tabindex="-1"
@@ -223,11 +224,54 @@ System.out.println(result);%>
                                              data-dismiss="modal" id="sprintSettingModalClose">취소</button>
                                        </div>
 
+=======
+                              <div class="col-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <div class="card-header">
+                                                <h5>출결현황</h5>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                              <li class="list-group-item">스터디원 A</li>
+                                              <li class="list-group-item">스터디원 B</li>
+                                              <li class="list-group-item">스터디원 C</li>
+                                              <li class="list-group-item">스터디원 D</li>
+                                            </ul>
+                                            <div class="card-footer" >
+                                                <div class="d-grid gap-2 col-6 mx-auto">
+                                                    <button class="btn btn-primary" type="button">출석하기</button>
+                                                  </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                <ul></ul>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <div class="card-header">
+                                                <h5>메모</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                This is some text within a card body.
+                                                This is some text within a card body.
+                                                This is some text within a card body.
+                                                This is some text within a card body.
+                                                This is some text within a card body.
+                                                This is some text within a card body.
+                                              </div>
+                                            <div class="card-footer">
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                                              <button type="button" class="btn btn-primary btn-sm">게시</button>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO.git
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
+<<<<<<< HEAD
                         <!--캘린더 영역끝-->
                      </div>
                      <div class="col-4">
@@ -274,6 +318,8 @@ System.out.println(result);%>
                               </div>
                            </div>
                         </div>
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO.git
                      </div>
                   </div>
                </div>
@@ -299,10 +345,64 @@ System.out.println(result);%>
                   <td>작성날짜</td>
                </tr>
 
+<<<<<<< HEAD
 
             </table>
          </div>
            
+=======
+               <tbody id="board">
+               
+               <% tb_boardDAO dao = new tb_boardDAO(); 
+     
+               
+               %> 
+
+               </tbody>
+
+            </table>
+         </div>
+            <script type="text/javascript">
+                      
+                      $("#boardBtn").click(function(){
+                       console.log("게시판 버튼 클릭");
+                       loadMessage();
+                       });
+                      
+                      function loadMessage(){
+                       $.ajax({
+                          url : "boardSelectAll",
+                          method : "post",
+                          dataType : "JSON",
+                          data : {"b_num" : b_num},
+                          success : resultJson,
+                          error : errFun
+                          });
+                         }
+                      
+                      
+                      function resultJson(data){
+                       console.log(data);
+                       var html = "";
+                       for(var i = 0;i < data.length;i++){
+                          html+= "<tr>";
+                          html += "<td>" + (i+1) + "</td>";
+                          html += "<td>" + data[i].b_title + "</td>";
+                          html += "<td>" + data[i].b_contents + "</td>";
+                          
+                            html+= "<tr>";            
+                       }
+                       
+                       $("#board").html(html);
+                       
+                    }
+                    function errFun(err){
+                       console.log(err);
+                       console.log("통신실패");
+                    }
+
+                      </script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO.git
          </div>
       </div>
    </section>

@@ -6,12 +6,12 @@
 		INSERT INTO tb_calendar values(calendar_seq.nextval,#{user_id},#{groupId},#{title},#{writer},#{content},#{start1},#{end1},#{allday},#{textColor},#{backgroundColor},#{borderColor})
 	</insert>
 
-	<select id="eventselect" parameterType="String" resultType="com.smhrd.model.tb_calVO">
+	 <select id="eventselect" parameterType="String" resultType="com.smhrd.model.tb_calVO">
 		select * from tb_calendar where user_id = #{user_id}
-	</select>
+	</select>  
 
-  <select id="calget" resultType="com.smhrd.model.tb_calVO">
-     select * from tb_calendar where user_id = #{user_id}
-  </select>
+    <select id="calget" resultType="com.smhrd.model.tb_calVO">
+     select * from tb_calendar where user_id = #{user_id} 
+  </select> 
 
 </mapper>

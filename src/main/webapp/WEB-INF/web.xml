@@ -29,7 +29,6 @@
 		<servlet-class>com.smhrd.controller.makestudy</servlet-class>
 	</servlet>
 	<servlet>
-
 		<servlet-name>boardInsertService</servlet-name>
 		<display-name>boardInsertService</display-name>
 		<description></description>
@@ -52,6 +51,18 @@
 		<display-name>boardSelectAll</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.boardSelectAll</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>searchroom</servlet-name>
+		<display-name>searchroom</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.searchroom</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>joinStudyRoom</servlet-name>
+		<display-name>joinStudyRoom</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.joinStudyRoom</servlet-class>
 	</servlet>
 
 
@@ -87,6 +98,15 @@
 	<servlet-mapping>
 		<servlet-name>boardSelectAll</servlet-name>
 		<url-pattern>/boardSelectAll</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>	
+		<servlet-name>searchroom</servlet-name>
+		<url-pattern>/searchroom</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>joinStudyRoom</servlet-name>
+		<url-pattern>/joinStudyRoom</url-pattern>
+
 	</servlet-mapping>
 
 </web-app>
