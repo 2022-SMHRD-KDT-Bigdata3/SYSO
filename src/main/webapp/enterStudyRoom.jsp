@@ -37,14 +37,16 @@
 <link href="css/styles.css" rel="stylesheet" />
 <!-- 비동기통신을 위한 제이쿼리 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<link href='main.css'rel='stylesheet'></link>
+<link href='main.css' rel='stylesheet'></link>
 <script src='main.js'></script>
 <!-- fullcalendar -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js"></script>
-    
-    
-        <script type="text/javascript">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css">
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js"></script>
+
+
+<script type="text/javascript">
         var obj;
             document.addEventListener('DOMContentLoaded', function () {
                 var calendarEl = document.getElementById('calendar');
@@ -81,7 +83,7 @@
                                         alert("종료일이 시작일보다 먼저입니다.");
                                     }else{ // 정상적인 입력 시
                                         var obj = {
-                                    		"user_id" : user_id,
+                                          "user_id" : user_id,
                                             "title" : content,
                                             "start" : start_date,
                                             "end" : end_date
@@ -108,7 +110,7 @@
 	<!-- 세션에 사용자정보 가져오기 -->
 	<%
 	tb_user info = (tb_user) session.getAttribute("info");
-	tb_mysrVO mysr_info = (tb_mysrVO) session.getAttribute("mysr_info"); 
+	tb_mysrVO mysr_info = (tb_mysrVO) session.getAttribute("mysr_info");
 	%>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
@@ -129,21 +131,28 @@
 						class="nav-link dropdown-toggle" href="#" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false"> 스터디 카페 </a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item"
-								href="studyCafe.jsp#masthead">나의 스터디모임</a></li>
-							<li><a class="dropdown-item"
-								href="studyCafe.jsp#searchRoom">스터디모임 찾기</a></li>
-							<li><a class="dropdown-item"
-								href="studyCafe.jsp#makeRoom">스터디모임 만들기</a></li>
+							<li><a class="dropdown-item" href="studyCafe.jsp#masthead">나의
+									스터디모임</a></li>
+							<li><a class="dropdown-item" href="studyCafe.jsp#searchRoom">스터디모임
+									찾기</a></li>
+							<li><a class="dropdown-item" href="studyCafe.jsp#makeRoom">스터디모임
+									만들기</a></li>
 						</ul></li>
 					<li class="nav-item"><a class="nav-link"
 						href="mainPage.jsp#page-top">나의 일정</a></li>
 					<!-- 세션의 아이디값 확인 -->
-					<%if (info!=null){ %>
+					<%
+					if (info != null) {
+					%>
 					<li class="nav-item"><a class="nav-link"
 						href="mainPage.jsp#page-top"><%=info.getUser_id()%>님 환영합니다</a></li>
-					<%}else{ %>
-					<h3>현재 아이디값 못찾음</h3><%} %>
+					<%
+					} else {
+					%>
+					<h3>현재 아이디값 못찾음</h3>
+					<%
+					}
+					%>
 				</ul>
 			</div>
 		</div>
@@ -156,8 +165,10 @@
 	<!-- header-->
 	<header class="masthead">
 		<div class="container px-4 px-lg-5 h-100">
-			<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+			<div
+				class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
 				<div class="container text-center">
+<<<<<<< HEAD
                         <div class="row">
                           <div class="col align-self-center">
                             <h2 class="text-white font-weight-bold"><%=mysr_info.getSr_name()%></h2>
@@ -329,7 +340,210 @@
                  </form>
             </div>
         </section>
+=======
+					<div class="row">
+						<div class="col align-self-center">
+							<h2 class="text-white font-weight-bold"><%=mysr_info.getSr_name()%></h2>
+							<hr class="divider" />
+						</div>
+					</div>
+					<!--end title-->
+					<div class="container text-center">
+						<!--캘린더, 출결,메모를 나눌 영역-->
+						<div class="row">
+							<div class="col-8">
+								<!--캘린더 영역 시작-->
+								<div class="card">
+									<div class="card-body">
+										<div id="calendarBox">
+											<div id="calendar"></div>
+										</div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO.git
 
+										<!-- modal 추가 -->
+										<div class="modal fade" id="calendarModal" tabindex="-1"
+											role="dialog" aria-labelledby="exampleModalLabel"
+											aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabel">일정을
+															입력하세요.</h5>
+														<button type="button" id="sprintSettingModalClose"
+															class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<div class="form-group">
+															<input type="hidden" name="user_id" id="hiddenid"
+																value="<%=info.getUser_id()%>" /> <label for="taskId"
+																class="col-form-label">일정 내용</label> <input type="text"
+																class="form-control" id="calendar_content"
+																name="calendar_content"> <label for="taskId"
+																class="col-form-label">시작 날짜</label> <input type="date"
+																class="form-control" id="calendar_start_date"
+																name="calendar_start_date"> <label for="taskId"
+																class="col-form-label">종료 날짜</label> <input type="date"
+																class="form-control" id="calendar_end_date"
+																name="calendar_end_date">
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-warning"
+															id="addCalendar">추가</button>
+														<button type="button" class="btn btn-secondary"
+															data-dismiss="modal" id="sprintSettingModalClose">취소</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--캘린더 영역끝-->
+							</div>
+							<div class="col-4">
+								<div class="row">
+									<div class="col">
+										<div class="card" style="width: 18rem;">
+											<div class="card-header">
+												<h5>출결현황</h5>
+											</div>
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item">스터디원 A</li>
+												<li class="list-group-item">스터디원 B</li>
+												<li class="list-group-item">스터디원 C</li>
+												<li class="list-group-item">스터디원 D</li>
+											</ul>
+											<div class="card-footer">
+												<div class="d-grid gap-2 col-6 mx-auto">
+													<button class="btn btn-primary" type="button">출석하기</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul></ul>
+								<div class="row">
+									<div class="col">
+										<div class="card" style="width: 18rem;">
+											<div class="card-header">
+												<h5>메모</h5>
+											</div>
+											<div class="card-body">This is some text within a card
+												body. This is some text within a card body. This is some
+												text within a card body. This is some text within a card
+												body. This is some text within a card body. This is some
+												text within a card body.</div>
+											<div class="card-footer">
+												<div class="input-group input-group-sm mb-3">
+													<input type="text" class="form-control"
+														aria-label="Sizing example input"
+														aria-describedby="inputGroup-sizing-sm">
+													<button type="button" class="btn btn-primary btn-sm">게시</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- 작성된 게시글 목록 출력?-->
+	<%
+	tb_boardDAO dao = new tb_boardDAO();
+	ArrayList<tb_boardVO> list = dao.boardSelect(info.getUser_id());
+
+	for (int i = 0; i < list.size(); i++) {
+		System.out.println(list.get(i).toString());
+	%>
+
+
+	<%
+	}
+	%>
+	<section class="page-section" id="services">
+		<div class="container px-4 px-lg-5">
+			<h2 class="text-center mt-0">게시판</h2>
+			<hr class="divider" />
+			<div class="row gx-4 gx-lg-5">
+		
+
+				<%
+				for (int j = 0; j <list.size(); j++) {
+				%>
+				<div class="accordion" id="accordionExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingOne">
+							<button class="accordion-button" type="button"
+								data-bs-toggle="collapse" data-bs-target="#collapseOne"
+								aria-expanded="true" aria-controls="collapseOne">
+						<div>	<%=list.get(j).getB_title()%></div> 
+						
+							</button>
+						</h2> 
+						<div id="collapseOne" class="accordion-collapse collapse show"
+							aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+							<div class="accordion-body">
+					
+								<strong><%=list.get(j).getB_contents()%> </strong> 
+					
+			
+							<div align="right">
+								<code><%=list.get(j).getB_ymd()%></code></div>
+							<div align="right">	
+								<p class="text-black-50 bg-white"> 작성자 : <%=list.get(j).getUser_id()%></p></div> 
+				
+							</div>
+						</div>
+					</div>
+					<%
+					}
+					%>
+
+	
+				
+					</table>
+				</div>
+			</div>
+	</section>
+	<!-- 게시글 작성-->
+	<section class="page-section bg-dark text-white">
+		<div class="container px-4 px-lg-5 text-center">
+			<form action="boardInsertService" method="post">
+				<h3 class="text-white mt-0">글 작성하기</h3>
+				<hr class="divider divider-light" />
+				<!--<p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>-->
+				<div class="card text-end">
+					<div class="card-header">
+						<div class="mb-3">
+							 <input type="hidden" class="form-control" name="user_id"
+								id="hiddenid" value="<%= info.getUser_id()%>" /> <input
+								type="text" class="form-control" name="b_title" placeholder="제목">
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="mb-3">
+							<input type="text" class="form-control" name="sr_num"
+								placeholder="임시 방번호">
+						</div>
+						<div class="mb-3">
+							<textarea class="form-control" name="b_contents" rows="3"
+								placeholder="내용"></textarea>
+						</div>
+					</div>
+					<div class="card-footer ">
+						<button type="submit" onclick="#" class="btn btn-primary">게시하기</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
 	<!-- Footer-->
 	<footer class="bg-light py-5">
 		<div class="container px-4 px-lg-5">
@@ -349,6 +563,6 @@
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 
-    
+
 </body>
 </html>
