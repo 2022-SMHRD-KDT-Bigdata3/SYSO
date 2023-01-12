@@ -8,4 +8,8 @@
 	<insert id="joinstudyroom" parameterType="com.smhrd.model.tb_mysrVO">
 		insert into tb_mystudyroom values(#{sr_num},#{user_id},#{sr_name},sysdate)
 	</insert>
+	
+	<insert id="makestudy" parameterType="com.smhrd.model.tb_srVO">
+		insert into tb_studyroom values(sr_num.nextval,#{sr_name}, #{user_id}, #{sr_gender}, #{sr_aog}, sysdate, sysdate + 100, #{sr_capacity}, #{sr_headcount}, #{location}, #{sb_num})
+	</insert>
 </mapper>

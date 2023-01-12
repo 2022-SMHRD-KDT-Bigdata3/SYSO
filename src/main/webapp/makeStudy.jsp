@@ -103,101 +103,127 @@
 					<h2 class="text-white font-weight-bold">스터디모임 만들기</h2>
 					<hr class="divider" />
 				</div>
-								
-				<div class="card ">
-                    <div class="card-body">
-                        <div class="container text-start">
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" name="sr_name" class="form-control" placeholder="스터디 이름">
-                                </div>
-                                <ul></ul>
-                                <div class="col">
-                                    <input type="text" name="subject" class="form-control" placeholder="시험과목"><!--aria-label="Username" aria-describedby="addon-wrapping">-->
-                                </div>
-                                <ul></ul>
-                                <div class="col">
-                                    <div class="form-check form-check-inline">
-                                        <input name="sr_gender" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="m">
-                                        <label class="form-check-label" for="inlineCheckbox1">남자</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input name="sr_gender" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="f">
-                                        <label class="form-check-label" for="inlineCheckbox2">여자</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input name="sr_gender" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="f">
-                                        <label class="form-check-label" for="inlineCheckbox2">모두</label>
-                                      </div>
-                                </div>
-                                <ul></ul>
-                                <div class="col">
-                                    <div class="form-check form-check-inline">
-                                        <input name ="sr_aog" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="10">
-                                        <label class="form-check-label" for="inlineCheckbox1">10대</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input name ="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="20">
-                                        <label class="form-check-label" for="inlineCheckbox2">20대</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input name ="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="30">
-                                        <label class="form-check-label" for="inlineCheckbox1">30대</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input name ="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="40">
-                                        <label class="form-check-label" for="inlineCheckbox2">40대</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input name ="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="50">
-                                        <label class="form-check-label" for="inlineCheckbox1">50대</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input name ="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="60">
-                                        <label class="form-check-label" for="inlineCheckbox2">60대</label>
-                                    </div>
-                                </div>
-                                <ul></ul>
-                                <div class="col">
-                                    <select name="location"class="form-select" aria-label="Default select example">
-                                        <option selected>응시지역</option>
-                                        <option value="Seoul">서울</option>
-                                        <option value="Incheon">인천</option>
-                                        <option value="Gyeonggi">경기</option>
-                                        <option value="Gangwon">강원</option>
-                                        <option value="Chungnam">충남</option>
-                                        <option value="Chungbuk">충북</option>
-                                        <option value="Daejeon">대전</option>
-                                        <option value="Jeonbuk">전북</option>
-                                        <option value="Jeonnam">전남</option>
-                                        <option value="Gwangju">광주</option>
-                                        <option value="Gyeongnam">경남</option>
-                                        <option value="Kyeongbuk">경북</option>
-                                        <option value="Busan">부산</option>
-                                        <option value="Daegu">대구</option>
-                                        <option value="Ulsan">울산</option>
-                                        <option value="Jeju">제주</option>
-                                      </select>    
-                                </div>
-                                <ul></ul>
-                                <div class="col">
-                                    <input type="number" min="1" name="sr_capacity" class="form-control" placeholder="허용인원수"><!--aria-label="Username" aria-describedby="addon-wrapping">-->
-                                </div>
-                                <ul></ul>
-                            </div>
-                           
-                            </div>
-                            <div class="card-footer">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="button">만들기</button>
-                                 
-                            </div>
-                          
-                    </div>
-                  </div>
+
+				<form action="makestudy">
+					<div class="card ">
+						<div class="card-body">
+							<div class="container text-start">
+								<div class="row">
+									<div class="col">
+										<input type="text" name="sr_name" class="form-control"
+											placeholder="스터디 이름">
+									</div>
+									<ul></ul>	
+										<select name="sb_num" class="form-select"
+											aria-label="Default select example">
+											<option selected>시험과목</option>
+											<option value="1">정보처리기사</option>
+											<option value="2">컴퓨터활용능력</option>
+											<option value="3">한국사능력검정시험</option>
+											<option value="4">토익</option>
+											<option value="5">지게차 운전기능사</option>
+											<option value="6">건축기사</option>
+											<option value="7">한식조리기능사</option>
+											<option value="8">전기기사</option>
+											<option value="9">용접기능사</option>
+											<option value="10">직업상담사 2급</option>										
+										</select>
+									</div>
+                                	<ul></ul>
+									<div class="col">
+										<div class="form-check form-check-inline">
+											<input name="sr_gender" class="form-check-input"
+												type="checkbox" id="inlineCheckbox1" value="m"> <label
+												class="form-check-label" for="inlineCheckbox1">남자</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input name="sr_gender" class="form-check-input"
+												type="checkbox" id="inlineCheckbox2" value="f"> <label
+												class="form-check-label" for="inlineCheckbox2">여자</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input name="sr_gender" class="form-check-input"
+												type="checkbox" id="inlineCheckbox2" value="f"> <label
+												class="form-check-label" for="inlineCheckbox2">모두</label>
+										</div>
+									</div>
+									<ul></ul>
+									<div class="col">
+										<div class="form-check form-check-inline">
+											<input name="sr_aog" class="form-check-input" type="checkbox"
+												id="inlineCheckbox1" value="10"> <label
+												class="form-check-label" for="inlineCheckbox1">10대</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input name="sr_aog" class="form-check-input" type="checkbox"
+												id="inlineCheckbox2" value="20"> <label
+												class="form-check-label" for="inlineCheckbox2">20대</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input name="sr_aog" class="form-check-input" type="checkbox"
+												id="inlineCheckbox1" value="30"> <label
+												class="form-check-label" for="inlineCheckbox1">30대</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input name="sr_aog" class="form-check-input" type="checkbox"
+												id="inlineCheckbox2" value="40"> <label
+												class="form-check-label" for="inlineCheckbox2">40대</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input name="sr_aog" class="form-check-input" type="checkbox"
+												id="inlineCheckbox1" value="50"> <label
+												class="form-check-label" for="inlineCheckbox1">50대</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input name="sr_aog" class="form-check-input" type="checkbox"
+												id="inlineCheckbox2" value="60"> <label
+												class="form-check-label" for="inlineCheckbox2">60대</label>
+										</div>
+									</div>
+									<ul></ul>
+									<div class="col">
+										<select name="location" class="form-select"
+											aria-label="Default select example">
+											<option selected>응시지역</option>
+											<option value="Seoul">서울</option>
+											<option value="Incheon">인천</option>
+											<option value="Gyeonggi">경기</option>
+											<option value="Gangwon">강원</option>
+											<option value="Chungnam">충남</option>
+											<option value="Chungbuk">충북</option>
+											<option value="Daejeon">대전</option>
+											<option value="Jeonbuk">전북</option>
+											<option value="Jeonnam">전남</option>
+											<option value="Gwangju">광주</option>
+											<option value="Gyeongnam">경남</option>
+											<option value="Kyeongbuk">경북</option>
+											<option value="Busan">부산</option>
+											<option value="Daegu">대구</option>
+											<option value="Ulsan">울산</option>
+											<option value="Jeju">제주</option>
+										</select>
+									</div>
+									<ul></ul>
+									<div class="col">
+										<input type="number" min="1" name="sr_capacity"
+											class="form-control" placeholder="허용인원수">
+									</div>
+									<ul></ul>
+								</div>
+
+							</div>
+							<div class="card-footer">
+								<div class="d-grid gap-2">
+									<input type="hidden" name="user_id" id="hiddenid" value="<%=info.getUser_id()%>" />
+									<button type="submit" class="btn btn-primary">만들기</button>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
-		</div>		
-				
 	</header>
 
 

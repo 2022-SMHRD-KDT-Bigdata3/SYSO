@@ -27,7 +27,7 @@ public class joinStudyRoom extends HttpServlet {
 		//tb_mystudyroom테이블에 각 sr_num, user_id, sr_name, sr_joindate(sysdate로) 컬럼에 값 추가
 		
 		//위의 정보들을 vo 형태로 만들기
-		tb_mysrVO vo =new tb_mysrVO(sr_num, user_id, sr_name);
+		tb_mysrVO vo = new tb_mysrVO();
 		
 		tb_srDAO dao = new tb_srDAO();
 		int res = dao.joinStudyRoom(vo);

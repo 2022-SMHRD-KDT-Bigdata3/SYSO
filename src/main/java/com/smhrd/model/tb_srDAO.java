@@ -28,6 +28,18 @@ public class tb_srDAO {
 		session.close();
 		return res;
 	}
+
+	public int makestudy(tb_srVO vo) {
+		session = sqlSessionFactory.openSession(true);
+	    int res = 0;
+	    res = session.insert("makestudy", vo);
+	    session.close();
+	    return res;	
+		
+	}
+
+	
+
 	
 	
 

@@ -8,12 +8,7 @@ public abstract class tb_mysrVO {
 	private String outdate;
 	
 	
-	public tb_mysrVO(int sr_num, String user_id, String sr_name) {
-		super();
-		this.sr_num = sr_num;
-		this.user_id = user_id;
-		this.sr_name = sr_name;
-	}
+
 
 	public tb_mysrVO(int sr_num, String user_id, String sr_name, String joindate, String outdate) {
 		super();
