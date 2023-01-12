@@ -30,19 +30,21 @@ public class boardInsertService extends HttpServlet {
 		
 		tb_boardVO vo = new tb_boardVO(sr_num, b_title, b_contents, user_id);
 		
+		System.out.println(vo.toString());
+		
 		tb_boardDAO dao = new tb_boardDAO();
 		int res = dao.boardInsert(vo);
 		
 		if(res>0) { //삽입성공
-			System.out.println("성공");
+			System.out.println("전송성공");
 			//response.sendRedirect("#");
 		}else { // 삽입실패
-			System.out.println("실패");
+			System.out.println("전송실패");
 			//response.sendRedirect("#");
 		}
 		
 		
-		
+		response.sendRedirect("enterStudyRoom.jsp");
 		
 		
 	}

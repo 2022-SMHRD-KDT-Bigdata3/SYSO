@@ -12,6 +12,11 @@
 		delete from tb_board where b_num = #{b_num}
 	</delete>
 	
+	<select id="boardSelect" parameterType="String" resultType="com.smhrd.model.tb_boardVO">
+		select * from tb_board where user_id=#{user_id} order by day desc
+	</select>
+	
+
 	<select id = "boardSelectAll" resultType="com.smhrd.model.tb_boardVO">
 		select * from tb_board order by day desc
 	</select>

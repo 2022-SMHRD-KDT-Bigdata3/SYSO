@@ -20,6 +20,10 @@ public class tb_boardVO {
 		this.user_id = user_id;
 	}
 
+	public tb_boardVO() {
+		super();
+	}
+	
 
 	public tb_boardVO(int sr_num, String b_title, String b_contents, String user_id) {
 		super();
@@ -30,10 +34,20 @@ public class tb_boardVO {
 	}
 
 
-	
-	
-	
-	
+	public tb_boardVO(int b_num, String b_title, String b_contents) {
+		super();
+		this.b_num = b_num;
+		this.b_title = b_title;
+		this.b_contents = b_contents;
+	}
+
+	public tb_boardVO(String b_title, String b_contents) {
+		super();
+		this.b_title = b_title;
+		this.b_contents = b_contents;
+	}
+
+
 	@Override
 	public String toString() {
 		return "tb_boardVO [b_num=" + b_num + ", sr_num=" + sr_num + ", b_title=" + b_title + ", b_contents="
@@ -41,9 +55,6 @@ public class tb_boardVO {
 	}
 
 
-	public tb_boardVO() {
-		super();
-	}
 
 
 	public int getB_num() {

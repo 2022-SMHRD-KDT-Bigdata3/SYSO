@@ -32,6 +32,19 @@ public class tb_boardDAO {
 		session.close();
 		return res;
 	}
+	
+	public ArrayList<tb_boardVO> boardSelect(String user_id) {
+		//public 리턴타입 메소드명(매개변수){}
+		//매개변수로 info.getEmail을 받아온다 걔는 String 타입으로 나오니까 
+		session = sqlSessionFactory.openSession(true);
+		
+		//여러개를 받아오니까 selectList사용("key", 검색하기위한 매개변수)
+		List<tb_boardVO> list = session.selectList("boardSelect", user_id);
+		session.close();
+		//다운캐스팅해서 리턴
+		return (ArrayList<tb_boardVO>)list;
+	}
+	
 
 	public ArrayList<tb_boardVO> boardSelectAll() {
 		
