@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.tb_mysrVO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="com.smhrd.model.tb_user"%>
@@ -96,14 +97,7 @@
             });
             
             
-<%
-Gson gson = new Gson();
-String content = (String)session.getAttribute("content");
-System.out.println(content);
 
-String result = gson.toJson(content);
-System.out.println(result);
-%>
 </script>
 
 </head>
@@ -111,6 +105,7 @@ System.out.println(result);
 	<!-- 세션에 사용자정보 가져오기 -->
 	<%
 	tb_user info = (tb_user) session.getAttribute("info");
+	tb_mysrVO mysr_info = (tb_mysrVO) session.getAttribute("mysr_info"); 
 	%>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
@@ -162,7 +157,7 @@ System.out.println(result);
 				<div class="container text-center">
                         <div class="row">
                           <div class="col align-self-center">
-                            <h2 class="text-white font-weight-bold">스터디모임 이름</h2>
+                            <h2 class="text-white font-weight-bold"><%=mysr_info.getSr_name()%></h2>
                             <hr class="divider" />
                           </div>        
                         </div><!--end title-->

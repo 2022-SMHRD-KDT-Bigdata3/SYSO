@@ -1,13 +1,15 @@
 package com.smhrd.model;
 
-public abstract class tb_mysrVO {
+public class tb_mysrVO {
+	
 	private int sr_num;
 	private String user_id;
 	private String sr_name;
 	private String joindate;
 	private String outdate;
-	
-	
+
+
+
 	public tb_mysrVO(int sr_num, String user_id, String sr_name) {
 		super();
 		this.sr_num = sr_num;

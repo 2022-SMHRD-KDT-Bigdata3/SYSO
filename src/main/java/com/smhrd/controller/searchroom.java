@@ -39,7 +39,7 @@ public class searchroom extends HttpServlet {
 		//검색한 내용을 세션에 담아 보내기
 		request.setAttribute("searchList", list);
 		
-		RequestDispatcher rdi = request.getRequestDispatcher("searchSrList.jsp#portfolio");
+		RequestDispatcher rdi = request.getRequestDispatcher("searchSrList.jsp");
 		rdi.forward(request, response);
 	}
 

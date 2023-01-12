@@ -6,6 +6,6 @@
 	</select>
 	
 	<insert id="joinstudyroom" parameterType="com.smhrd.model.tb_mysrVO">
-		insert into tb_mystudyroom values(#{sr_num},#{user_id},#{sr_name},sysdate)
+		insert into tb_mystudyroom values(#{sr_num},#{user_id},#{sr_name},sysdate,sysdate+100)
 	</insert>
 </mapper>

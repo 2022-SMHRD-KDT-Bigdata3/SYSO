@@ -88,24 +88,30 @@
             <div class="container px-4 px-lg-5">
                 <div class="container text-center">
                     <div class="d-flex justify-content-center">
-       <%ArrayList<tb_srVO>list = (ArrayList<tb_srVO>)request.getAttribute("searchList"); %>
+       <%ArrayList<tb_srVO>searchlist = (ArrayList<tb_srVO>)request.getAttribute("searchList"); %>
         <div id="portfolio">
             <div class="container-fluid p-0">
                 <div class="row g-0">
-                    <%for(int i=0;i<list.size();i++){%>
+                    <%for(int i=0;i<searchlist.size();i++){%>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
                             <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50"><%=list.get(i).getSr_start_date() %></div>
-                                <div class="project-name"><%=list.get(i).getSr_name() %></div>
+                                <div class="project-category text-white-50"><%=searchlist.get(i).getSr_start_date() %></div>
+                                <div class="project-name"><%=searchlist.get(i).getSr_name() %></div>
                                 <ul></ul>
-                                <button type="button" class="btn btn-outline-light">가입</button>
+                                <form action="joinStudyRoom">
+                                <input type="hidden" name="user_id" id="hiddenid" value="<%=info.getUser_id()%>" />
+                                <input type="hidden" name="sr_num" id="hidden_sr_num" value="<%=searchlist.get(i).getSr_num()%>" />
+                                <input type="hidden" name="sr_name" id="hidden_sr_name" value="<%=searchlist.get(i).getSr_name()%>" />
+                                <button type="submit" class="btn btn-outline-light"id="btn" >가입</button>
+                                </form>
                             </div>
                         </a>
                     </div>
                     <%} %>
                 </div>
+
             </div>
         </div>
                           
