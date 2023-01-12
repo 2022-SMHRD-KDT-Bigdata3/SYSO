@@ -13,7 +13,7 @@ public class tb_srDAO {
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	private SqlSession session;
 	
-	public ArrayList<tb_srVO> searchRoom(tb_srVO vo) {
+	public ArrayList<tb_srVO> searchRoom(searchsrVO vo) {
 		session = sqlSessionFactory.openSession(true);
 		List<tb_srVO>list =  session.selectList("searchRoom", vo);
 		session.close();

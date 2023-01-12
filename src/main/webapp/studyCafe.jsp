@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.tb_srVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.tb_user"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -220,7 +222,7 @@
                             <form action="searchroom">
                             <ul class="list-group list-group-flush">
                               <li class="list-group-item">
-                                    <input name ="sr_name"  type="text" class="form-control" placeholder="시험과목"><!--aria-label="Username" aria-describedby="addon-wrapping">-->
+                                    <input name ="search_name"  type="text" class="form-control" placeholder="시험과목"><!--aria-label="Username" aria-describedby="addon-wrapping">-->
                               </li>
                             </ul>
                             <ul class="list-group list-group-flush">
@@ -231,15 +233,15 @@
                                         </div>
                                         <div class="col-10">
                                             <div class="form-check form-check-inline ">
-                                                <input name="sr_gender"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="a">
+                                                <input name="search_gender"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="a">
                                                 <label class="form-check-label" for="inlineCheckbox2">전체</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input name="sr_gender"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="m">
+                                                <input name="search_gender"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="m">
                                                 <label class="form-check-label" for="inlineCheckbox1">남자</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input name="sr_gender" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="f">
+                                                <input name="search_gender" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="f">
                                                 <label class="form-check-label" for="inlineCheckbox2">여자</label>
                                             </div>
                                         </div>
@@ -253,27 +255,31 @@
                                         </div>
                                         <div class="col-10">
                                     <div class="form-check form-check-inline">
-                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="10">
+                                        <input name="search_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="10">
+                                        <label class="form-check-label" for="inlineCheckbox1">전체</label>
+                                    </div>    
+                                    <div class="form-check form-check-inline">
+                                        <input name="search_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="10">
                                         <label class="form-check-label" for="inlineCheckbox1">10대</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="20">
+                                        <input name="search_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="20">
                                         <label class="form-check-label" for="inlineCheckbox2">20대</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="30">
+                                        <input name="search_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="30">
                                         <label class="form-check-label" for="inlineCheckbox1">30대</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="40">
+                                        <input name="search_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="40">
                                         <label class="form-check-label" for="inlineCheckbox2">40대</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="50">
+                                        <input name="search_aog"class="form-check-input" type="checkbox" id="inlineCheckbox1" value="50">
                                         <label class="form-check-label" for="inlineCheckbox1">50대</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input name="sr_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="60">
+                                        <input name="search_aog"class="form-check-input" type="checkbox" id="inlineCheckbox2" value="60">
                                         <label class="form-check-label" for="inlineCheckbox2">60대이상</label>
                                     </div>
                                 </div>
@@ -281,8 +287,9 @@
                               </ul>
                               <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <select name="location"class="form-select" aria-label="Default select example">
+                                    <select name="search_lo"class="form-select" aria-label="Default select example">
                                         <option selected>응시지역</option>
+                                        <option value="All">전체</option>
                                         <option value="Seoul">서울</option>
                                         <option value="Incheon">인천</option>
                                         <option value="Gyeonggi">경기</option>
@@ -313,22 +320,26 @@
                          </div>
                   </div>
             </div>
-        <!--스터디모임 검색결과 출력-->
         </section>
+
+        <!--스터디모임 검색결과 출력-->
+        
         <div id="portfolio">
             <div class="container-fluid p-0">
                 <div class="row g-0">
+                    <%//for(int i=0;i<list.size();i++){%>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
                             <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
+                                <div class="project-category text-white-50"><%//=list.get(i).getSr_name() %></div>
+                                <div class="project-name"><%//=list.get(i).getSr_start_date() %></div>
                                 <ul></ul>
                                 <button type="button" class="btn btn-outline-light">가입</button>
                             </div>
                         </a>
                     </div>
+                    
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box"title="Project Name">
                             <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />

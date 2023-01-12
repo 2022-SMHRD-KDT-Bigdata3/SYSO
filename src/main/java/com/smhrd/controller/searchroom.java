@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import com.smhrd.model.searchsrVO;
 import com.smhrd.model.tb_srDAO;
 import com.smhrd.model.tb_srVO;
 
@@ -21,24 +21,26 @@ public class searchroom extends HttpServlet {
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sr_name = request.getParameter("sr_name");
-		String sr_gender = request.getParameter("sr_gender");
-		int sr_aog = Integer.parseInt(request.getParameter("sr_aog"));
-		String location = request.getParameter("location");
+		String search_name = request.getParameter("search_name");
+		String search_gender = request.getParameter("search_gender");
+		int search_aog = Integer.parseInt(request.getParameter("search_aog"));
+		String search_lo = request.getParameter("search_lo");
 		
-		tb_srVO vo = new tb_srVO(sr_name, sr_gender, sr_aog, location);
+		searchsrVO vo = new searchsrVO(search_name, search_gender, search_aog, search_lo);
 		
 		tb_srDAO dao = new tb_srDAO();
 		
 		ArrayList<tb_srVO>list =  dao.searchRoom(vo);
 		
-		for(tb_srVO sr_info : list) {
-			System.out.println(vo.toString());
+		for(tb_srVO srvo : list) {
+			System.out.println(srvo.toString());
 		}
 		
-		//request.setAttribute("memberList", list);
+		//검색한 내용을 세션에 담아 보내기
+		request.setAttribute("searchList", list);
 		
-		//RequestDispatcher rdi = request.getRequestDispatcher("memberList.jsp");
+		RequestDispatcher rdi = request.getRequestDispatcher("searchSrList.jsp#portfolio");
+		rdi.forward(request, response);
 	}
 
 }

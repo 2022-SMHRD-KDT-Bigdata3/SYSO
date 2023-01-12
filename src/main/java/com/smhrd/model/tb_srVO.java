@@ -15,7 +15,9 @@ public class tb_srVO {
 	   private String location;
 	   
 	   
-	  
+	   public tb_srVO() {
+		   
+	   }
 	   
 	@Override
 	public String toString() {
