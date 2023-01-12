@@ -1,5 +1,8 @@
 package com.smhrd.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -28,6 +31,15 @@ public class tb_boardDAO {
 		res = session.delete("boardDelete", vo);
 		session.close();
 		return res;
+	}
+
+	public ArrayList<tb_boardVO> boardSelectAll() {
+		
+		session = sqlSessionFactory.openSession(true);
+		List<tb_boardVO> list = session.selectList("boardSelectAll");
+		session.close();
+		return (ArrayList<tb_boardVO>)list;
+		
 	}
 	
 }
