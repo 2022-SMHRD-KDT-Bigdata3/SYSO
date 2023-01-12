@@ -38,6 +38,15 @@ public class tb_srDAO {
 		
 	}
 
+	public ArrayList<tb_mysrVO> selectMysr(String user_id) {
+		session = sqlSessionFactory.openSession(true);
+		List<tb_mysrVO> list =session.selectList("selectmystudyroom",user_id);
+		session.close();
+		return (ArrayList<tb_mysrVO>)list;
+	}
+	
+
+
 	
 
 	

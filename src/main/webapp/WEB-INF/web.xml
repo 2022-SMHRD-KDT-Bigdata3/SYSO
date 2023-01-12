@@ -64,6 +64,18 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.joinStudyRoom</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>enterMysr</servlet-name>
+		<display-name>enterMysr</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.enterMysr</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>selectMysr</servlet-name>
+		<display-name>selectMysr</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.selectMysr</servlet-class>
+	</servlet>
 
 
 
@@ -107,6 +119,14 @@
 		<servlet-name>joinStudyRoom</servlet-name>
 		<url-pattern>/joinStudyRoom</url-pattern>
 
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>enterMysr</servlet-name>
+		<url-pattern>/enterMysr</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>selectMysr</servlet-name>
+		<url-pattern>/selectMysr</url-pattern>
 	</servlet-mapping>
 
 </web-app>

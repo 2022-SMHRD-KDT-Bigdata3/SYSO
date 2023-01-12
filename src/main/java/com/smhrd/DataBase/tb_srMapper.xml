@@ -12,4 +12,8 @@
 	<insert id="makestudy" parameterType="com.smhrd.model.tb_srVO">
 		insert into tb_studyroom values(sr_num.nextval,#{sr_name}, #{user_id}, #{sr_gender}, #{sr_aog}, sysdate, sysdate + 100, #{sr_capacity}, #{sr_headcount}, #{location}, #{sb_num})
 	</insert>
+	
+	<select id="selectmystudyroom" parameterType="String" resultType="com.smhrd.model.tb_mysrVO">
+		select * from tb_mystudyroom where #{user_id} = user_id
+	</select>
 </mapper>

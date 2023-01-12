@@ -29,6 +29,7 @@
 	<%
 	tb_user info = (tb_user)session.getAttribute("info");
 	%>
+	<%ArrayList<tb_srVO>searchlist = (ArrayList<tb_srVO>)request.getAttribute("searchList"); %>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -102,107 +103,17 @@
                                     </div>
                                     <div class="card-footer">
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                            <button id="enterSR" class="btn btn-primary me-md-2" type="button" onclick="location.href='enterStudyRoom.jsp'">입장</button>
-                                            <button class="btn btn-primary " type="button">탈퇴</button>
+                                        <form action="enterMysr">
+                                        <input type="hidden" name="user_id" id="hiddenid" value="<%=info.getUser_id()%>" />
+                                            <button id="enterSR" class="btn btn-primary me-md-2" type="submit" >들어가기</button><!-- onclick="location.href='enterMysr'"ㄴ -->
+                                            <button class="btn btn-primary " type="button">나가기</button>
                                           </div>
+                                        </form>
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">스터디모임 이름</h5>
-                                        <div class="container text-start">
-                                          <div class="row">
-                                            <div class="col-4"><p class="card-text" >시험과목</p></div>
-                                            <div class="col-8">정보처리기사</div>
-                                          </div>
-                                          <div class="row">
-                                              <div class="col-4"><p class="card-text">가입날짜</p></div>
-                                              <div class="col-8">2023-01-01</div>
-                                            </div>
-                                            <div class="row">
-                                              <div class="col-4"><p class="card-text">진행률</p></div>
-                                              <div class="col-8">
-                                                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                      <div class="progress-bar" style="width: 25%"></div>
-                                                    </div>
-                                              </div>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="card-footer">
-                                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                              <button class="btn btn-primary me-md-2" type="button">탈퇴</button>
-                                              <button class="btn btn-primary " type="button">삭제</button>
-                                            </div>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">스터디모임 이름</h5>
-                                        <div class="container text-start">
-                                          <div class="row">
-                                            <div class="col-4"><p class="card-text" >시험과목</p></div>
-                                            <div class="col-8">정보처리기사</div>
-                                          </div>
-                                          <div class="row">
-                                              <div class="col-4"><p class="card-text">가입날짜</p></div>
-                                              <div class="col-8">2023-01-01</div>
-                                            </div>
-                                            <div class="row">
-                                              <div class="col-4"><p class="card-text">진행률</p></div>
-                                              <div class="col-8">
-                                                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                      <div class="progress-bar" style="width: 25%"></div>
-                                                    </div>
-                                              </div>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="card-footer">
-                                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                              <button class="btn btn-primary me-md-2" type="button">탈퇴</button>
-                                              <button class="btn btn-primary " type="button">삭제</button>
-                                            </div>
-                                      </div>   
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">스터디모임 이름</h5>
-                                        <div class="container text-start">
-                                          <div class="row">
-                                            <div class="col-4"><p class="card-text" >시험과목</p></div>
-                                            <div class="col-8">정보처리기사</div>
-                                          </div>
-                                          <div class="row">
-                                              <div class="col-4"><p class="card-text">가입날짜</p></div>
-                                              <div class="col-8">2023-01-01</div>
-                                            </div>
-                                            <div class="row">
-                                              <div class="col-4"><p class="card-text">진행률</p></div>
-                                              <div class="col-8">
-                                                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                      <div class="progress-bar" style="width: 25%"></div>
-                                                    </div>
-                                              </div>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="card-footer">
-                                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                              <button class="btn btn-primary me-md-2" type="button">탈퇴</button>
-                                              <button class="btn btn-primary " type="button">삭제</button>
-                                            </div>
-                                      </div>
-                                  </div>
-                                </div>
+                                  </div><!--end card -->
+                                </div><!--end col-->
                               </div>
-                        </div>
+                        </div><!--end  row-->
                       </div>
                     </div>
                 </div>

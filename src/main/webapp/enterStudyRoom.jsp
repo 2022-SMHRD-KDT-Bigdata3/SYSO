@@ -299,24 +299,34 @@
         <!-- 게시글 작성-->
         <section class="page-section bg-dark text-white">
             <div class="container px-4 px-lg-5 text-center">
+                <form action="boardInsertService" method="post">
                 <h3 class="text-white mt-0">글 작성하기</h3>
                         <hr class="divider divider-light" />
                         <!--<p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>-->
                         <div class="card text-end">
                             <div class="card-header">
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="제목">
+                                    <input type="hidden" class="form-control" name="user_id"
+                        id="hiddenid" value="<%=info.getUser_id()%>" />
+                        <input type="text" class="form-control" name="b_title"
+                        placeholder="제목">
                                   </div>
                             </div>
                             <div class="card-body">
                                 <div class="mb-3">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="내용"></textarea>
+                                    <input type="text" class="form-control" name="sr_num"
+                        placeholder="임시 방번호">
                                   </div>
+                                  <div class="mb-3">
+                     <textarea class="form-control" name="b_contents" rows="3"
+                        placeholder="내용"></textarea>
+                  </div>
                             </div>
                             <div class="card-footer ">
-                                <a href="#" class="btn btn-primary">게시하기</a>
+                                <button type="submit" onclick="#" class="btn btn-primary">게시하기</button>
                             </div>
                           </div>
+                 </form>
             </div>
         </section>
 
