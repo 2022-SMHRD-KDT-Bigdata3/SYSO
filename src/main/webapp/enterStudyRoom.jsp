@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.tb_boardDAO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="com.smhrd.model.tb_user"%>
@@ -249,88 +250,152 @@ System.out.println(result);
                                             <div class="card-footer">
                                                 <div class="input-group input-group-sm mb-3">
                                                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                                                    <button type="button" class="btn btn-primary btn-sm">게시</button>
-                                                  </div>
-                                            </div>
-                                          </div>
+                                                              <button type="button" class="btn btn-primary btn-sm">게시</button>
                                     </div>
-                                </div>
+                                 </div>
                               </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </header>
-        <!-- 작성된 게시글 목록 출력?-->
-        <section class="page-section" id="services">
-            <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">게시판</h2>
-                <hr class="divider" />
-                <div class="row gx-4 gx-lg-5">
-                    <table class="table table-dark table-hover">
-                        <tr>
-                            <td>작성자</td>
-                            <td>글제목</td>
-                            <td>작성날짜</td>
-                        </tr>
-                        <tr>
-                            <td>작성자</td>
-                            <td>글제목</td>
-                            <td>작성날짜</td>
-                        </tr>
-                        <tr>
-                            <td>작성자</td>
-                            <td>글제목</td>
-                            <td>작성날짜</td>
-                        </tr>
-                      </table>
-                </div>
+         </div>
+      </div>
+   </header>
+   <!-- 작성된 게시글 목록 출력?-->
+   <section class="page-section" id="services">
+      <div class="container px-4 px-lg-5">
+         <h2 class="text-center mt-0">게시판</h2>
+         <hr class="divider" />
+         <div class="row gx-4 gx-lg-5">
+            <div class="card-footer ">
+                  
+   <button id="boardBtn" class="btn btn-primary">게시글확인하기</button>
+
+               
+            <table class="table table-dark table-hover">
+               <tr>
+                  <td>작성자</td>
+                  <td>글제목</td>
+                  <td>작성날짜</td>
+               </tr>
+
+               <tbody id="board">
+               
+               <% tb_boardDAO dao = new tb_boardDAO(); 
+     
+               
+               %> 
+
+               </tbody>
+
+            </table>
+         </div>
+            <script type="text/javascript">
+                      
+                      $("#boardBtn").click(function(){
+                       console.log("게시판 버튼 클릭");
+                       loadMessage();
+                       });
+                      
+                      function loadMessage(){
+                       $.ajax({
+                          url : "boardSelectAll",
+                          method : "post",
+                          dataType : "JSON",
+                          data : {"b_num" : b_num},
+                          success : resultJson,
+                          error : errFun
+                          });
+                         }
+                      
+                      
+                      function resultJson(data){
+                       console.log(data);
+                       var html = "";
+                       for(var i = 0;i < data.length;i++){
+                          html+= "<tr>";
+                          html += "<td>" + (i+1) + "</td>";
+                          html += "<td>" + data[i].b_title + "</td>";
+                          html += "<td>" + data[i].b_contents + "</td>";
+                          
+                            html+= "<tr>";            
+                       }
+                       
+                       $("#board").html(html);
+                       
+                    }
+                    function errFun(err){
+                       console.log(err);
+                       console.log("통신실패");
+                    }
+
+                      </script>
+         </div>
+      </div>
+   </section>
+   <!-- 게시글 작성-->
+   <section class="page-section bg-dark text-white">
+      <form action="boardInsertService" method="post">
+         <div class="container px-4 px-lg-5 text-center">
+            <h3 class="text-white mt-0">글 작성하기</h3>
+            <hr class="divider divider-light" />
+            <!--<p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>-->
+
+            <div class="card text-end">
+               <div class="card-header">
+
+                  <div class="mb-3">
+
+                     <input type="hidden" class="form-control" name="user_id"
+                        id="hiddenid" value="<%=info.getUser_id()%>" />
+                  </div>
+
+                  <div class="mb-3">
+                     <input type="text" class="form-control" name="b_title"
+                        placeholder="제목">
+                  </div>
+                  <div class="mb-3">
+                     <input type="text" class="form-control" name="sr_num"
+                        placeholder="임시 방번호">
+                  </div>
+               </div>
+               <div class="card-body">
+                  <div class="mb-3">
+                     <textarea class="form-control" name="b_contents" rows="3"
+                        placeholder="내용"></textarea>
+                  </div>
+               </div>
+               <div class="card-footer ">
+                     <button type="submit" onclick="#"
+                     class="btn btn-primary">게시하기</button>
+
+               </div>
             </div>
-        </section>
-        <!-- 게시글 작성-->
-        <section class="page-section bg-dark text-white">
-            <div class="container px-4 px-lg-5 text-center">
-                <h3 class="text-white mt-0">글 작성하기</h3>
-                        <hr class="divider divider-light" />
-                        <!--<p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>-->
-                        <div class="card text-end">
-                            <div class="card-header">
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="제목">
-                                  </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="내용"></textarea>
-                                  </div>
-                            </div>
-                            <div class="card-footer ">
-                                <a href="#" class="btn btn-primary">게시하기</a>
-                            </div>
-                          </div>
-            </div>
-        </section>
+         </div>
+      </form>
+   </section>
 
-	<!-- Footer-->
-	<footer class="bg-light py-5">
-		<div class="container px-4 px-lg-5">
-			<div class="small text-center text-muted">Copyright &copy; 2023
-				- TEAM syso</div>
-		</div>
-	</footer>
-	<!-- Bootstrap core JS-->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- SimpleLightbox plugin JS-->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-	<!-- Core theme JS-->
-	<script src="js/scripts.js"></script>
+   <!-- Footer-->
+   <footer class="bg-light py-5">
+      <div class="container px-4 px-lg-5">
+         <div class="small text-center text-muted">Copyright &copy; 2023
+            - TEAM syso</div>
+      </div>
+   </footer>
+   <!-- Bootstrap core JS-->
+   <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- SimpleLightbox plugin JS-->
+   <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+   <!-- Core theme JS-->
+   <script src="js/scripts.js"></script>
 
-	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+   <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 
-    
+
 </body>
 </html>
