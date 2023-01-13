@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.tb_srVO"%>
 <%@page import="com.smhrd.model.tb_boardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.tb_mysrVO"%>
@@ -111,6 +112,7 @@
 	<%
 	tb_user info = (tb_user) session.getAttribute("info");
 	tb_mysrVO mysr_info = (tb_mysrVO) session.getAttribute("mysr_info");
+	tb_srVO enter_info = (tb_srVO)session.getAttribute("enter_info");
 	%>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
@@ -129,7 +131,7 @@
 						href="main.html#page-top">홈</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> 스터디 카페 </a>
+						data-bs-toggle="dropdown" aria-expanded="false">스터디카페</a>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="studyCafe.jsp#masthead">나의
 									스터디모임</a></li>
@@ -170,7 +172,11 @@
 				<div class="container text-center">
 					<div class="row">
 						<div class="col align-self-center">
-							<h2 class="text-white font-weight-bold"><%=mysr_info.getSr_name()%></h2>
+							<h2 class="text-white font-weight-bold">
+						
+							<%=enter_info.getSr_name() %>
+							
+							</h2>
 							<hr class="divider" />
 						</div>
 					</div>

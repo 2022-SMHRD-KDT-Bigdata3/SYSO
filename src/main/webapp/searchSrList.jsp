@@ -94,6 +94,7 @@
                                 <input type="hidden" name="user_id" id="hiddenid" value="<%=info.getUser_id()%>" />
                                 <input type="hidden" name="sr_num" id="hidden_sr_num" value="<%=searchlist.get(i).getSr_num()%>" />
                                 <input type="hidden" name="sr_name" id="hidden_sr_name" value="<%=searchlist.get(i).getSr_name()%>" />
+                                <input type="hidden" name="sb_num" id="hidden_sb_num" value="<%=searchlist.get(i).getSb_num()%>" />
                                 <button type="submit" class="btn btn-outline-light"id="btn" >가입</button>
                                 </form>
                             </div>

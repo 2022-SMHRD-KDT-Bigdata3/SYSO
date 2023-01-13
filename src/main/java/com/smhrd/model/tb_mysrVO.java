@@ -5,8 +5,8 @@ public class tb_mysrVO {
 	private int sr_num;
 	private String user_id;
 	private String sr_name;
-	private String joindate;
-	private String outdate;
+	private String sr_joindate;
+	private String sr_outdate;
 	private String sb_num;
 
 
@@ -16,13 +16,39 @@ public class tb_mysrVO {
 
 	
 
+
+
+
+
+	public tb_mysrVO(int sr_num, String user_id) {
+		super();
+		this.sr_num = sr_num;
+		this.user_id = user_id;
+	}
+
+
+
+
+
+
+
+	public tb_mysrVO(int sr_num, String user_id, String sr_name, String sb_num) {
+		super();
+		this.sr_num = sr_num;
+		this.user_id = user_id;
+		this.sr_name = sr_name;
+		this.sb_num = sb_num;
+	}
+
+
+
 	public tb_mysrVO(int sr_num, String user_id, String sr_name, String joindate, String outdate, String sb_num) {
 		super();
 		this.sr_num = sr_num;
 		this.user_id = user_id;
 		this.sr_name = sr_name;
-		this.joindate = joindate;
-		this.outdate = outdate;
+		this.sr_joindate = joindate;
+		this.sr_outdate = outdate;
 		this.sb_num = sb_num;
 	}
 
@@ -73,26 +99,29 @@ public class tb_mysrVO {
 
 
 
-	public String getJoindate() {
-		return joindate;
+	
+
+
+	public String getSr_joindate() {
+		return sr_joindate;
 	}
 
 
 
-	public void setJoindate(String joindate) {
-		this.joindate = joindate;
+	public void setSr_joindate(String sr_joindate) {
+		this.sr_joindate = sr_joindate;
 	}
 
 
 
-	public String getOutdate() {
-		return outdate;
+	public String getSr_outdate() {
+		return sr_outdate;
 	}
 
 
 
-	public void setOutdate(String outdate) {
-		this.outdate = outdate;
+	public void setSr_outdate(String sr_outdate) {
+		this.sr_outdate = sr_outdate;
 	}
 
 
@@ -111,10 +140,13 @@ public class tb_mysrVO {
 
 	@Override
 	public String toString() {
-		return "tb_mysrVO [sr_num=" + sr_num + ", user_id=" + user_id + ", sr_name=" + sr_name + ", joindate="
-				+ joindate + ", outdate=" + outdate + ", sb_num=" + sb_num + "]";
+		return "tb_mysrVO [sr_num=" + sr_num + ", user_id=" + user_id + ", sr_name=" + sr_name + ", sr_joindate="
+				+ sr_joindate + ", sr_outdate=" + sr_outdate + ", sb_num=" + sb_num + "]";
 	}
 
+
+
+	
 	
 	
 }

@@ -33,7 +33,8 @@ public class selectMysr extends HttpServlet {
 				System.out.println(vo.toString());
 			}
 			
-			request.setAttribute("selectMysr_info", list);
+			HttpSession session = request.getSession();
+			session.setAttribute("selectMysr_info", list);
 			
 			RequestDispatcher rdi = request.getRequestDispatcher("studyCafe.jsp#page-top");
 			rdi.forward(request, response);

@@ -16,4 +16,8 @@
 	<select id="selectmystudyroom" parameterType="String" resultType="com.smhrd.model.tb_mysrVO">
 		select * from tb_mystudyroom where user_id = #{user_id}
 	</select>
+	
+	<select id="entermystudyroom" parameterType="com.smhrd.model.tb_mysrVO" resultType="com.smhrd.model.tb_srVO">
+		select * from tb_studyroom where sr_num = #{sr_num}
+	</select>
 </mapper>
