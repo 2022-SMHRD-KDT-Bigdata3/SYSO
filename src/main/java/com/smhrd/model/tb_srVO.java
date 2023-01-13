@@ -12,7 +12,7 @@ public class tb_srVO {
 	   private int sr_capacity;
 	   private int sr_headcount;
 	   private String location;
-	   private int sb_num;
+	   private String sb_num;
 	   
 	   
 
@@ -34,7 +34,7 @@ public class tb_srVO {
 	
 	
 	public tb_srVO(int sr_num, String sr_name, String user_id, String sr_gender, int sr_aog, String sr_start_date,
-			String sr_end_date, int sr_capacity, int sr_headcount, String location, int sb_num) {
+			String sr_end_date, int sr_capacity, int sr_headcount, String location, String sb_num) {
 		super();
 		this.sr_num = sr_num;
 		this.sr_name = sr_name;
@@ -51,7 +51,7 @@ public class tb_srVO {
 	
 	
 	
-	public tb_srVO(String sr_name, String user_id, String sr_gender, int sr_aog, String location, int sr_capacity, int sb_num) {
+	public tb_srVO(String sr_name, String user_id, String sr_gender, int sr_aog, String location, int sr_capacity, String sb_num) {
 		this.sr_name = sr_name;
 		this.user_id = user_id;
 		this.sr_gender = sr_gender;
@@ -123,10 +123,10 @@ public class tb_srVO {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public int getSb_num() {
+	public String getSb_num() {
 		return sb_num;
 	}
-	public void setSb_num(int sb_num) {
+	public void setSb_num(String sb_num) {
 		this.sb_num = sb_num;
 	}
 	  

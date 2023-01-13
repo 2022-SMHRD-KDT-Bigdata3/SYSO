@@ -117,16 +117,16 @@
 										<select name="sb_num" class="form-select"
 											aria-label="Default select example">
 											<option selected>시험과목</option>
-											<option value="1">정보처리기사</option>
-											<option value="2">컴퓨터활용능력</option>
-											<option value="3">한국사능력검정시험</option>
-											<option value="4">토익</option>
-											<option value="5">지게차 운전기능사</option>
-											<option value="6">건축기사</option>
-											<option value="7">한식조리기능사</option>
-											<option value="8">전기기사</option>
-											<option value="9">용접기능사</option>
-											<option value="10">직업상담사 2급</option>										
+											<option value="정보처리기사">정보처리기사</option>
+											<option value="컴퓨터활용능력">컴퓨터활용능력</option>
+											<option value="한국사능력검정시험">한국사능력검정시험</option>
+											<option value="토익">토익</option>
+											<option value="지게차 운전기능사">지게차 운전기능사</option>
+											<option value="건축기사">건축기사</option>
+											<option value="한식조리기능사">한식조리기능사</option>
+											<option value="전기기사">전기기사</option>
+											<option value="용접기능사">용접기능사</option>
+											<option value="직업상담사">직업상담사 2급</option>										
 										</select>
 									</div>
                                 	<ul></ul>
