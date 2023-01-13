@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.tb_mysrVO"%>
 <%@page import="com.smhrd.model.tb_srVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.tb_user"%>
@@ -29,7 +30,7 @@
 	<%
 	tb_user info = (tb_user)session.getAttribute("info");
 	%>
-	<%ArrayList<tb_srVO>searchlist = (ArrayList<tb_srVO>)request.getAttribute("searchList"); %>
+	<%ArrayList<tb_mysrVO>selectMysr_info = (ArrayList<tb_mysrVO>)request.getAttribute("selectMysr_info"); %>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -73,15 +74,15 @@
                             <h2 class="text-white font-weight-bold">나의 스터디 모임</h2>
                             <hr class="divider" />
                           </div>
-
                           <div class="row">
                             <ul></ul>
                             <ul></ul>
                             <div class="row row-cols-1 row-cols-md-2 g-4">
                                 <div class="col">
+                          <%//for(int i=0;i<selectMysr_info.size();i++){%>
                                   <div class="card">
                                     <div class="card-body">
-                                      <h5 class="card-title">스터디모임 이름</h5>
+                                      <h5 class="card-title"><%=selectMysr_info.get(0).getSr_name()%></h5>
                                       <div class="container text-start">
                                         <div class="row">
                                           <div class="col-4"><p class="card-text" >시험과목</p></div>
@@ -109,8 +110,10 @@
                                             <button class="btn btn-primary " type="button">나가기</button>
                                           </div>
                                         </form>
+                       
                                     </div>
                                   </div><!--end card -->
+                                  
                                 </div><!--end col-->
                               </div>
                         </div><!--end  row-->

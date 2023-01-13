@@ -6,7 +6,7 @@
 	</select>
 	
 	<insert id="joinstudyroom" parameterType="com.smhrd.model.tb_mysrVO">
-		insert into tb_mystudyroom values(#{sr_num},#{user_id},#{sr_name},sysdate,sysdate+100)
+		insert into tb_mystudyroom values(#{sr_num},#{user_id},#{sr_name},sysdate,sysdate+100,#{sb_num})
 	</insert>
 	
 	<insert id="makestudy" parameterType="com.smhrd.model.tb_srVO">
@@ -14,6 +14,6 @@
 	</insert>
 	
 	<select id="selectmystudyroom" parameterType="String" resultType="com.smhrd.model.tb_mysrVO">
-		select * from tb_mystudyroom where #{user_id} = user_id
+		select * from tb_mystudyroom where user_id = #{user_id}
 	</select>
 </mapper>

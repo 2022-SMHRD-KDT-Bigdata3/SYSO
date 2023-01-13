@@ -28,6 +28,7 @@
     <mapper resource="com/smhrd/DataBase/tb_calMapper.xml"/>
     <mapper resource="com/smhrd/DataBase/tb_boardMapper.xml"/>
     <mapper resource="com/smhrd/DataBase/tb_srMapper.xml"/>
+    <mapper resource="com/smhrd/DataBase/tb_mysrMapper.xml"/>
 
   </mappers>
   

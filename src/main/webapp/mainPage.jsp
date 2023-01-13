@@ -229,8 +229,9 @@
                   class="nav-link dropdown-toggle" href="#" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false"> 스터디 카페 </a>
                   <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="selectMysr">나의
-                           스터디모임</a></li><!-- studyCafe.jsp#masthead -->
+                  <input type="hidden" name="user_id" id="hiddenid" value="<%=info.getUser_id()%>" />
+                     <li><a class="dropdown-item" href="selectMysr?user_id=<%=info.getUser_id()%>" >나의
+                           스터디모임</a></li>
                      <li><a class="dropdown-item" href="studyCafe.jsp#searchRoom">스터디모임
                            찾기</a></li>
                      <li><a class="dropdown-item" href="studyCafe.jsp#makeRoom">스터디모임
