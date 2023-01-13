@@ -26,7 +26,7 @@ public class makestudy extends HttpServlet {
 		int sr_aog = Integer.parseInt(request.getParameter("sr_aog"));
 		String location = request.getParameter("location");
 		int sr_capacity = Integer.parseInt(request.getParameter("sr_capacity"));
-		int sb_num = Integer.parseInt(request.getParameter("sb_num"));
+		String sb_num = request.getParameter("sb_num");
 		
 		tb_srVO vo = new tb_srVO(sr_name, user_id, sr_gender, sr_aog, location, sr_capacity, sb_num);
 		tb_srDAO dao = new tb_srDAO();

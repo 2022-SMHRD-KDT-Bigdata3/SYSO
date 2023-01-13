@@ -33,14 +33,19 @@ public class tb_boardDAO {
       return res;
    }
    
-   public ArrayList<tb_boardVO> boardSelect(String user_id) {
-      session = sqlSessionFactory.openSession(true);
-      List<tb_boardVO> list = session.selectList("boardSelect", user_id);
-      session.close();
-      //다운캐스팅해서 리턴
-      return (ArrayList<tb_boardVO>)list;
-   }
+
    
+   public ArrayList<tb_boardVO> boardSelect1(int Sr_num) {
+	      session = sqlSessionFactory.openSession(true);
+	      List<tb_boardVO> list = session.selectList("boardSelect", Sr_num);
+	      session.close();
+
+	      return (ArrayList<tb_boardVO>)list;
+	   } 
+   
+   
+   
+
 
    public ArrayList<tb_boardVO> boardSelectAll() {
       
