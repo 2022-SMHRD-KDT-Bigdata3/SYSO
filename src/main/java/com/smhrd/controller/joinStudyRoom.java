@@ -23,16 +23,18 @@ public class joinStudyRoom extends HttpServlet {
       int sr_num = Integer.parseInt(request.getParameter("sr_num"));
       String user_id = request.getParameter("user_id");
       String sr_name = request.getParameter("sr_name");
+      String sb_num = request.getParameter("sb_num");
       //가져온 user_id 확인용 출력
       System.out.println(sr_num);
       System.out.println(user_id);
       System.out.println(sr_name);
+      System.out.println(sb_num);
       
       //tb_mystudyroom테이블에 각 sr_num, user_id, sr_name, sr_joindate(sysdate로) 컬럼에 값 추가
       
       //위의 정보들을 vo 형태로 만들기
       
-      tb_mysrVO mysr_info = new  tb_mysrVO(sr_num, user_id, sr_name);
+      tb_mysrVO mysr_info = new  tb_mysrVO(sr_num, user_id, sr_name,sb_num);
       
       tb_srDAO dao = new tb_srDAO();
       int res = dao.joinStudyRoom(mysr_info);

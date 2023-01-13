@@ -342,14 +342,13 @@
    <%
    tb_boardDAO dao = new tb_boardDAO();
     System.out.print(sr_num);
-	ArrayList<tb_boardVO> list1 = dao.boardSelect1(sr_num);                                     		
+   ArrayList<tb_boardVO> list1 = dao.boardSelect1(sr_num);                                           
    %>
    <section class="page-section" id="services">
       <div class="container px-4 px-lg-5">
          <h2 class="text-center mt-0">게시판</h2>
          <hr class="divider" />
          <div class="row gx-4 gx-lg-5">
-      
       
             <%
             for (int j = 0; j <list1.size(); j++) {
@@ -360,17 +359,22 @@
                      <button class="accordion-button" type="button"
                         data-bs-toggle="collapse" data-bs-target="#collapseOne"
                         aria-expanded="true" aria-controls="collapseOne">
-                  <div>   <%=list1.get(j).getB_title()%></div>                   
+                  <div>   <%=list1.get(j).getB_title()%></div> 
+                  
                      </button>
                   </h2> 
                   <div id="collapseOne" class="accordion-collapse collapse show"
                      aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                     <div class="accordion-body">          
-                        <strong><%=list1.get(j).getB_contents()%> </strong>   
+                     <div class="accordion-body">
+               
+                        <strong><%=list1.get(j).getB_contents()%> </strong> 
+               
+         
                      <div align="right">
                         <code><%=list1.get(j).getB_ymd()%></code></div>
                      <div align="right">   
                         <p class="text-black-50 bg-white"> 작성자 : <%=list1.get(j).getUser_id()%></p></div> 
+            
                      </div>
                   </div>
                </div>
@@ -437,4 +441,4 @@
 
 
 </body>
-</html> 
+</html>  

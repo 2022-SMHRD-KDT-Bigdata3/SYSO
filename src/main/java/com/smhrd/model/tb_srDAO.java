@@ -44,6 +44,15 @@ public class tb_srDAO {
 		session.close();
 		return (ArrayList<tb_mysrVO>)list;
 	}
+
+	public tb_srVO enterStudyRoom(tb_mysrVO vo) {
+		session = sqlSessionFactory.openSession(true);
+		
+		tb_srVO enter_info=null;
+		enter_info = session.selectOne("entermystudyroom",vo);
+		session.close();
+		return enter_info;
+	}
 	
 
 

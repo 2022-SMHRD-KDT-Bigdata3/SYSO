@@ -6,7 +6,11 @@
 	</select>
 	
 	<insert id="joinstudyroom" parameterType="com.smhrd.model.tb_mysrVO">
+<<<<<<< HEAD
 insert into tb_mystudyroom values(#{sr_num},#{user_id},#{sr_name},sysdate,sysdate+100,#{sb_num})
+=======
+		insert into tb_mystudyroom values(#{sr_num},#{user_id},#{sr_name},sysdate,sysdate+100,#{sb_num})
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-Bigdata3/SYSO
 	</insert>
 	
 	<insert id="makestudy" parameterType="com.smhrd.model.tb_srVO">
@@ -14,6 +18,10 @@ insert into tb_mystudyroom values(#{sr_num},#{user_id},#{sr_name},sysdate,sysdat
 	</insert>
 	
 	<select id="selectmystudyroom" parameterType="String" resultType="com.smhrd.model.tb_mysrVO">
-		select * from tb_mystudyroom where #{user_id} = user_id
+		select * from tb_mystudyroom where user_id = #{user_id}
+	</select>
+	
+	<select id="entermystudyroom" parameterType="com.smhrd.model.tb_mysrVO" resultType="com.smhrd.model.tb_srVO">
+		select * from tb_studyroom where sr_num = #{sr_num}
 	</select>
 </mapper>
